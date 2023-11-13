@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Vazir;
+  src: url("assets/Vazir.ttf") format("truetype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Vazir;
+  background-color: #f7f7f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer components {
+  .shadow-form {
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.13);
+  }
+  .shadow-box {
+    box-shadow:
+      0 4px 20px rgba(50, 50, 93, 0.1),
+      0 5px 10px rgba(0, 0, 0, 0.07);
+  }
+  .box::-webkit-scrollbar {
+    width: 5px;
+  }
+  .box::-webkit-scrollbar-thumb {
+    background: #a02777;
+    border-radius: 5px;
+  }
+  .box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .box-bg::after {
+    background-image: linear-gradient(to left, #662046 0, transparent 50%);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: 1;
+  }
+  ::marker {
+    color: #818181;
+  }
+
+  .bg-about {
+    background: url(https://tursab118.com/templates/charter118/about.jpg) center
+      no-repeat;
+    padding: 40px 0;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .rotate {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+  }
+
+  .unorder>li::before {
+    color: #ffa903;
+    position: relative;
+    top: 7px;
+    content: "• ";
+    font-size: 25px;
+  }
+
+  .unorderFooter>li::before {
+    color: #ffa903;
+    position: relative;
+    top: 7px;
+    content: "• ";
+    font-size: 30px;
+  }
+
+  .aGuide{
+    position: relative;
+  }
+
+  .aGuide::before{
+     content: ">";
+     color: #2aacd5;
+     position: relative;
+     top: 2px;
+     margin-left: 5px;
+  }
+
+  .borderThin{
+    border-bottom-width: 1px;
+    border-color: #a02777;
+  }
+
+  .bg-weird{
+    background:  linear-gradient(179deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.3) 50%,rgba(255,255,255,1) 100%);
+  }
+
+}
