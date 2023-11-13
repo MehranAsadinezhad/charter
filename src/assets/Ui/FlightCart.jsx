@@ -1,4 +1,5 @@
 import React from "react";
+import FlightIcon from "./FlightIcon";
 
 export default function FlightCart() {
   return (
@@ -19,9 +20,9 @@ export default function FlightCart() {
             <p className="rounded-xl bg-gray-100">Fokker 100</p>
           </div>
           <div className="flex items-center">
-            <p>اهواز <span className="font-bold text-lg mx-2">22:55</span></p>
-            <div></div>
-            <p>مشهد <span className="font-bold text-lg mx-2">10:00</span></p>
+            <p className="ml-5">اهواز <span className="font-bold text-lg mx-2">22:55</span></p>
+              <FlightIcon/>
+            <p className="mr-5">مشهد <span className="font-bold text-lg mx-2">10:00</span></p>
           </div>
           <a href="v#" className="tracking-wide text-primary">
             قوانین استرداد
