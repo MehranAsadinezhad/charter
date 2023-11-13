@@ -3,8 +3,8 @@ import AutomaticList from "../Ui/AutomaticList";
 
 export default function About() {
   return (
-    <div className="bg-about w-screen relative mt-24 flex h-[600px] flex-col justify-center overflow-hidden">
-      <div className=" rotate absolute w-full bottom-auto right-0 top-0 z-50 block h-[109px] overflow-hidden text-center">
+    <div className="bg-about relative mt-24 flex h-[600px] w-screen flex-col justify-center overflow-hidden">
+      <div className=" rotate absolute bottom-auto right-0 top-0 z-50 block h-[109px] w-[1600px] overflow-hidden text-center 2xl:w-full">
         <svg
           width="1998"
           height="109"
@@ -50,7 +50,7 @@ export default function About() {
             همراه ما داشته باشید.
           </p>
           <div className="text-end">
-            <button className="bg-pink rounded-md px-4 py-1 text-light">
+            <button className="rounded-md bg-pink px-4 py-1 text-light">
               بیشتر
             </button>
           </div>
@@ -63,15 +63,15 @@ export default function About() {
         </div>
       </div>
 
-      <div className="absolute w-full bottom-0 z-50  text-center">
+      <div className="absolute 2xl:h-full -right-96 bottom-0 z-50 w-full  text-center">
         <svg
-         width="1998"
-         height="140"
-         className=""
-         version="1.1"
-         x="0px"
-         y="0px"
-         viewBox="0 0 1998.1 109"
+          width="2000"
+          height="128"
+          className=""
+          version="1.1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 1998.1 109"
         >
           <path
             opacity="0.2"

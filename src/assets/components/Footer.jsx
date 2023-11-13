@@ -21,8 +21,8 @@ import saman from "../images/samandeh.png";
 
 export default function Footer() {
   return (
-    <div className="bg-darkPrimary relative h-[570px] w-screen overflow-hidden">
-      <div className="rotate absolute right-0 z-50 block w-full overflow-hidden text-center">
+    <footer className="relative h-[570px] w-screen overflow-hidden bg-darkPrimary">
+      <div className="rotate absolute right-0 z-50 block w-[1600px] overflow-hidden text-center 2xl:w-full">
         <svg
           width="1998"
           height="109"
@@ -83,7 +83,7 @@ export default function Footer() {
             <img alt="gp" className="w-40 cursor-pointer" src={gp}></img>
           </div>
         </div>
-        <div className="border-darkestPrimary my-5 border-b-2"></div>
+        <div className="my-5 border-b-2 border-darkestPrimary"></div>
         <div className="grid grid-cols-4">
           <div className="col-span-1">
             <h1 className="text-center text-lg text-light">ارتباط با ما</h1>
@@ -191,17 +191,19 @@ export default function Footer() {
                 className="rounded-md border-2 border-light bg-light bg-opacity-40"
               ></img>
             </div>
-            <div className="bg-darkestPrimary mt-4 rounded-md px-4 py-2 text-sm leading-7 text-light">
+            <div className="mt-4 rounded-md bg-darkestPrimary px-4 py-2 text-sm leading-7 text-light">
               <p>ما دنیا را نزدیکتر میکنیم</p>
               <p>
                 تمام بلیط‌های این وب‌سایت توسط آژانس مقتدر سیر ایرانیان صادر
                 می‌شود و کلیه‌ی مسئولیت‌های صدور بلیط برعهده‌ی این آژانس است.
               </p>
             </div>
-            <p className="text-light mt-1 text-sm text-end">کلیه حقوق این سایت محفوظ و متعلق به چارتر118 می باشد.</p>
+            <p className="mt-1 text-end text-sm text-light">
+              کلیه حقوق این سایت محفوظ و متعلق به چارتر118 می باشد.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

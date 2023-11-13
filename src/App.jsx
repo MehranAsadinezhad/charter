@@ -1,8 +1,9 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 
-import AppLayout from "./assets/Ui/appLayout"
+import AppLayout from "./assets/Ui/AppLayout"
 import Home from "./assets/Pages/Home";
 import Passenger from "./assets/Pages/Passenger";
+import FlightProvider from "./assets/context/FlightContext";
 
 
 function App() {
@@ -28,9 +29,11 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router}/>
+      <FlightProvider>
+        <RouterProvider router={router} />
+      </FlightProvider>
     </>
-  )
+  );
 }
 
 export default App

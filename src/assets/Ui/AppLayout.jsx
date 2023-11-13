@@ -7,14 +7,14 @@ import Guide from "../components/Guide";
 
 export default function AppLayout() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Header />
       <Intro />
       <main>
         <Outlet />
       </main>
-      <Guide/>
+      <Guide />
       <Footer />
-    </>
+    </div>
   );
 }

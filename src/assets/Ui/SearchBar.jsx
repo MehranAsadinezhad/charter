@@ -1,46 +1,45 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaExchangeAlt } from "react-icons/fa";
 import { BiSolidPlaneTakeOff } from "react-icons/bi";
 import { BiSolidPlaneLand } from "react-icons/bi";
 import { BsFillCalendarDateFill } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { FlightContext } from "../context/FlightContext";
 
 export default function SearchBar() {
-  const [origin, setOrigin] = useState("");
-  const [destination, setDestination] = useState("");
+  const [departure, setDeparture] = useState("");
+  const [arrival, setArrival] = useState("");
   const [date, setDate] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const { setAvailFlights } = useContext(FlightContext);
 
-  // async function handleSubmit(e) {
-  //   try {
-  //     e.preventDefault();
-  //     const data = {
-  //       origin: origin,
-  //       destination: destination,
-  //       date: date,
-  //     };
-  //     const response = await fetch("", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(data),
-  //     });
-
-  //     const result = await response.json();
-  //     console.log("Success:", result);
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // }
-  
-  function handleSubmit(e){
-    e.preventDefault()
+  async function handleSubmit(e) {
+    try {
+      setLoading(true);
+      e.preventDefault();
+      if (!departure || !arrival || !date) return;
+      const newOrder = { origin: departure, destination: arrival, date: date };
+      const res = await fetch(``, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newOrder),
+      });
+      const { data } = await res.json();
+      setLoading(true);
+      setAvailFlights(data);
+      navigate("/Passenger");
+      return data;
+    } catch (err) {
+      throw Error(err);
+    }
   }
 
   return (
-    <div className="relative bottom-28 z-40 flex flex-col items-center justify-center">
+    <div className="relative bottom-28 z-50 flex flex-col items-center justify-center">
       <div className="absolute ml-[114px] flex items-center gap-3">
         <a
           href="#."
@@ -83,10 +82,10 @@ export default function SearchBar() {
         onSubmit={handleSubmit}
         className="shadow-form absolute top-4 rounded-md rounded-tr-none bg-graay px-5 py-6 pb-1"
       >
-        <div className="flex items-center gap-4 ">
+        <div className="flex items-center gap-4">
           <div className="relative w-56 rounded-md">
             <input
-            onChange={(e)=>setOrigin(e.target.value)}
+              onChange={(e) => setDeparture(e.target.value)}
               type="text"
               name="price"
               id="price"
@@ -100,7 +99,7 @@ export default function SearchBar() {
           <FaExchangeAlt className="cursor-pointer text-lg text-primary" />
           <div className="relative w-56 rounded-md">
             <input
-            onChange={(e)=>setDestination(e.target.value)}
+              onChange={(e) => setArrival(e.target.value)}
               type="text"
               name="price"
               id="price"
@@ -114,10 +113,9 @@ export default function SearchBar() {
 
           <div className="relative w-56 rounded-md">
             <input
-            onChange={(e)=>{
-            
-              setDate(e.target.value)
-            }}
+              onChange={(e) => {
+                setDate(e.target.value);
+              }}
               type="date"
               name="price"
               id="price"
@@ -133,12 +131,7 @@ export default function SearchBar() {
           نمایش کمترین نرخ در صورت عدم ورود تاریخ
         </p>
         <div className="mt-2 text-end">
-          <button
-            onClick={() => {
-              navigate("/Passenger");
-            }}
-            className="rounded-md bg-secondary px-14 py-2 text-lg font-semibold text-primary transition-all duration-200 hover:bg-light hover:ring-1 hover:ring-secondary"
-          >
+          <button className="rounded-md bg-secondary px-14 py-2 text-lg font-semibold text-primary transition-all duration-200 hover:bg-light hover:ring-1 hover:ring-secondary">
             جستجو
           </button>
         </div>

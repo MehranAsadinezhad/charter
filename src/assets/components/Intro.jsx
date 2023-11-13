@@ -63,9 +63,6 @@ export default function Intro() {
           </svg>
         </div>
       </div>
-    
-       
-     
     </section>
   );
 }
