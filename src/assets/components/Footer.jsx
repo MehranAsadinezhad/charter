@@ -168,27 +168,27 @@ export default function Footer() {
               <img
                 src={namad}
                 alt="namad"
-                className="rounded-md border-2 border-light bg-light bg-opacity-40"
+                className="rounded-md w-36 border-2 border-light bg-light bg-opacity-40"
               ></img>
               <img
                 src={saman}
                 alt="saman"
-                className="rounded-md border-2 border-light bg-light bg-opacity-40"
+                className="rounded-md w-36 border-2 border-light bg-light bg-opacity-40"
               ></img>
               <img
                 src={namad}
                 alt="namad"
-                className="rounded-md border-2 border-light bg-light bg-opacity-40"
+                className="rounded-md w-36 border-2 border-light bg-light bg-opacity-40"
               ></img>
               <img
                 src={saman}
                 alt="saman"
-                className="rounded-md border-2 border-light bg-light bg-opacity-40"
+                className="rounded-md w-36 border-2 border-light bg-light bg-opacity-40"
               ></img>
               <img
                 src={namad}
                 alt="namad"
-                className="rounded-md border-2 border-light bg-light bg-opacity-40"
+                className="rounded-md w-36 border-2 border-light bg-light bg-opacity-40"
               ></img>
             </div>
             <div className="mt-4 rounded-md bg-darkestPrimary px-4 py-2 text-sm leading-7 text-light">

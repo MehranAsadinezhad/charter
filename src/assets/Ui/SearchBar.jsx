@@ -7,11 +7,10 @@ import { useNavigate } from "react-router-dom";
 import { FlightContext } from "../context/FlightContext";
 
 export default function SearchBar() {
-  const [departure, setDeparture] = useState("");
-  const [arrival, setArrival] = useState("");
-  const [date, setDate] = useState("");
+  // const [departure, setDeparture] = useState("");
+  // const [arrival, setArrival] = useState("");
+  // const [date, setDate] = useState("");
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
   const { setAvailFlights } = useContext(FlightContext);
 
@@ -19,24 +18,28 @@ export default function SearchBar() {
     try {
       setLoading(true);
       e.preventDefault();
-      if (!departure || !arrival || !date) return;
-      const newOrder = { origin: departure, destination: arrival, date: date };
-      const res = await fetch(``, {
+      const formdata = new FormData(e.target)
+      // if (!departure || !arrival || !date) return;
+      const value = Object.fromEntries(formdata.entries());
+      console.log(value);
+      const res = await fetch("http://192.168.2.166:8000/api/app/avail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json"
         },
-        body: JSON.stringify(newOrder),
+        body: JSON.stringify(value),
       });
-      const { data } = await res.json();
+      const data = await res.json();
       setLoading(true);
       setAvailFlights(data);
-      navigate("/Passenger");
+      navigate('/Passenger')
       return data;
     } catch (err) {
       throw Error(err);
     }
   }
+
 
   return (
     <div className="relative bottom-28 z-50 flex flex-col items-center justify-center">
@@ -85,10 +88,9 @@ export default function SearchBar() {
         <div className="flex items-center gap-4">
           <div className="relative w-56 rounded-md">
             <input
-              onChange={(e) => setDeparture(e.target.value)}
               type="text"
-              name="price"
-              id="price"
+              name="origin"
+              id="origin"
               className="block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
               placeholder="مبدا"
             ></input>
@@ -99,10 +101,10 @@ export default function SearchBar() {
           <FaExchangeAlt className="cursor-pointer text-lg text-primary" />
           <div className="relative w-56 rounded-md">
             <input
-              onChange={(e) => setArrival(e.target.value)}
+       
               type="text"
-              name="price"
-              id="price"
+              name="destination"
+              id="destination"
               className="block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
               placeholder="مقصد"
             ></input>
@@ -113,12 +115,10 @@ export default function SearchBar() {
 
           <div className="relative w-56 rounded-md">
             <input
-              onChange={(e) => {
-                setDate(e.target.value);
-              }}
+          
               type="date"
-              name="price"
-              id="price"
+              name="date"
+              id="date"
               className="block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
               placeholder="تاریخ رفت"
             ></input>
