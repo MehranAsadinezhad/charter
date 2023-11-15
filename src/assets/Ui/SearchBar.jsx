@@ -7,6 +7,7 @@ import { BsFillCalendarDateFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { FlightContext } from "../context/FlightContext";
 import toast, { Toaster } from "react-hot-toast";
+import { config } from "../../../public/config";
 
 export default function SearchBar() {
   // const [departure, setDeparture] = useState("");
@@ -30,7 +31,7 @@ export default function SearchBar() {
       }
       const value = Object.fromEntries(formdata.entries());
       console.log(value);
-      const res = await fetch("http://192.168.2.166:8000/api/app/avail", {
+      const res = await fetch(`${config.api}/avail`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,12 +40,14 @@ export default function SearchBar() {
         body: JSON.stringify(value),
       });
       const data = await res.json();
-      setLoading(true);
+      console.log(data);
       setAvailFlights(data);
-      navigate("/Passenger");
+      navigate("/passenger");
       return data;
     } catch (err) {
       throw Error(err);
+    } finally {
+      setLoading(false);
     }
   }
 

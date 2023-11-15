@@ -5,6 +5,7 @@ const FlightContext = createContext();
 export default function FlightProvider({ children }) {
   const [availFlights, setAvailFlights] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [selectedFlight, setSelectedFlight] = useState(null);
 
   return (
     <FlightContext.Provider
@@ -13,6 +14,8 @@ export default function FlightProvider({ children }) {
         setAvailFlights,
         loading,
         setLoading,
+        selectedFlight,
+        setSelectedFlight
       }}
     >
       {children}

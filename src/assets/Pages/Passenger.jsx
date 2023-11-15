@@ -319,8 +319,7 @@ const hugeDatas = {
 };
 
 export default function Passenger() {
-   const { availFlights } = useContext(FlightContext);
-
+  const { availFlights } = useContext(FlightContext);
   const availDates = Object.entries(hugeDatas.KHD.THR.minDate);
   const extractDates = Object.keys(hugeDatas.KHD.THR.minDate);
   const startDate = extractDates.reduce(function (a, b) {
@@ -346,15 +345,15 @@ export default function Passenger() {
     <div className="my-14 grid grid-cols-4 gap-x-5 px-80">
       <div className="col-span-1 h-[550px] rounded-lg bg-light ring-1 ring-gray-300"></div>
       <div className="col-span-3">
-        <ul className="mb-5 flex w-full items-center gap-5 overflow-hidden overflow-x-auto rounded-lg bg-light p-2 ring-1 ring-gray-300">
-          {datesArray.map((date) => (
+        <ul className="mb-5 flex w-full items-center gap-5 overflow-x-auto overflow-hidden rounded-lg bg-light p-2 ring-1 ring-gray-300">
+          {datesArray?.map((date) => (
             <li
               key={Math.random()}
               className="flex flex-col border-l-2 border-gray-300 p-1 text-center"
             >
               <div className="flex w-32 ml-3 flex-col items-center justify-between gap-3">
                 <p className="text-center text-gray-400">{date}</p>
-                {availDates.filter((item) => item[0] === date).length > 0 ? (
+                {availDates?.filter((item) => item[0] === date).length > 0 ? (
                   <p className="text-green-700 text-lg font-semibold tracking-widest">
                     {availDates.filter((item) => item[0] === date).flat()[1]}
                   </p>
@@ -367,7 +366,7 @@ export default function Passenger() {
         </ul>
 
         <div className="flex flex-col gap-5">
-          {availFlights.flights.map((flight) => (
+          {availFlights?.flights?.map((flight) => (
             <FlightCart flight={flight} key={Math.random()} />
           ))}
         </div>
