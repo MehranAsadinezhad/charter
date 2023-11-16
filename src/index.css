@@ -112,7 +112,19 @@ body {
       rgba(255, 255, 255, 0.3) 50%,
       rgba(255, 255, 255, 1) 100%
     );
+
+    
   }
+
+  /* .dateClaendar::-webkit-inner-spin-button{
+    display: none;
+    appearance: none;
+  } */
+
+  /* .dateClaendar::-webkit-calendar-picker-indicator{
+    display: none;
+    appearance: none;
+  } */
 
 
   .loader {

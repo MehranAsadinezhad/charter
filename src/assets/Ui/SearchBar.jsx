@@ -24,12 +24,13 @@ export default function SearchBar() {
       if (
         formdata.get("origin") === "" ||
         formdata.get("destination") === "" ||
-        formdata.get("date") === ""
+        formdata.get("date") === "" ||
+        formdata.get("origin") === formdata.get("destination")
       ) {
-        toast.error("مبدا یا مقصد وارد شده صحیح نمی باشد");
+        toast.error("مبدا یا مقصد یا تاریخ وارد شده صحیح نمی باشد");
         return;
       }
-      const value = Object.fromEntries(formdata.entries());
+      const value = Object.fromEntries(formdata);
       console.log(value);
       const res = await fetch(`${config.api}/avail`, {
         method: "POST",
@@ -129,26 +130,40 @@ export default function SearchBar() {
           >
             <div className="flex items-center gap-4">
               <div className="relative w-56 rounded-md">
-                <input
+                <select
+                  style={{ WebkitAppearance: "none" }}
                   type="text"
                   name="origin"
                   id="origin"
                   className="block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   placeholder="مبدا"
-                ></input>
+                >
+                  <option value="MHD">مشهد</option>
+                  <option value="THR">تهران</option>
+                  <option value="AHW">اهواز</option>
+                  <option value="IFN">اصفهان</option>
+                  <option value="KIH">کیش</option>
+                </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                   <BiSolidPlaneTakeOff className="text-2xl text-gray-300"></BiSolidPlaneTakeOff>
                 </div>
               </div>
               <FaExchangeAlt className="cursor-pointer text-lg text-primary" />
               <div className="relative w-56 rounded-md">
-                <input
+                <select
+                  style={{ WebkitAppearance: "none" }}
                   type="text"
                   name="destination"
                   id="destination"
                   className="block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   placeholder="مقصد"
-                ></input>
+                >
+                  <option value="KIH">کیش</option>
+                  <option value="MHD">مشهد</option>
+                  <option value="THR">تهران</option>
+                  <option value="AHW">اهواز</option>
+                  <option value="IFN">اصفهان</option>
+                </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                   <BiSolidPlaneLand className="text-2xl text-gray-300"></BiSolidPlaneLand>
                 </div>
@@ -159,7 +174,7 @@ export default function SearchBar() {
                   type="date"
                   name="date"
                   id="date"
-                  className="block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="dateClaendar block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   placeholder="تاریخ رفت"
                 ></input>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">

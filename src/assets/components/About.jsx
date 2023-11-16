@@ -4,7 +4,7 @@ import AutomaticList from "../Ui/AutomaticList";
 export default function About() {
   return (
     <div className="bg-about relative mt-24 flex h-[600px] w-screen flex-col justify-center overflow-hidden">
-      <div className=" rotate absolute bottom-auto right-0 top-0 z-50 block h-[109px] w-[1600px] overflow-hidden text-center 2xl:w-full">
+      <div className="rotate absolute top-0 right-0 z-50 block w-[1600px] overflow-hidden text-center 2xl:w-full">
         <svg
           width="1998"
           height="109"
@@ -63,7 +63,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="absolute 2xl:h-full -right-96 bottom-0 z-50 w-full  text-center">
+      <div className="absolute -right-96 bottom-0 z-50 w-full text-center  2xl:h-full">
         <svg
           width="2000"
           height="128"
