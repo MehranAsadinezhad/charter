@@ -12,12 +12,12 @@ import {
 } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa6";
 import { SiAparat } from "react-icons/si";
-import logo from "../images/logo.png";
-import sib from "../images/sib.svg";
-import bazar from "../images/bazar.png";
-import gp from "../images/gp.png";
-import  namad  from "../images/namad.png";
-import saman from "../images/samandeh.png";
+import logo from "../../../public/images/logo.png";
+import sib from "../../../public/images/sib.svg";
+import bazar from "../../../public/images/bazar.png";
+import gp from "../../../public/images/gp.png";
+import namad from "../../../public/images/namad.png";
+import saman from "../../../public/images/samandeh.png";
 
 export default function Footer() {
   return (

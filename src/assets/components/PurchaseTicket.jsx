@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import charter from "../images/charter.jpg";
+import charter from "../../../public/images/charter.jpg";
 
 export default function PurchaseTicket() {
   const [show, setShow] = useState(false);

@@ -4,7 +4,7 @@ import { BsPerson } from "react-icons/bs";
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { BiHotel } from "react-icons/bi";
 import { SlPlane } from "react-icons/sl";
-import logo from "../images/logo.jpg";
+import logo from "../../../public/images/logo.jpg";
 
 export default function SecondNav() {
   return (

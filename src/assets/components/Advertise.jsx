@@ -1,7 +1,7 @@
 import React from "react";
-import foreignFlight from "../images/foreign-flight.jpg";
-import foreignHotel from "../images/foreign-hotel.jpg";
-import hotel from "../images/hotel.jpg";
+import foreignFlight from "../../../public/images/foreign-flight.jpg";
+import foreignHotel from "../../../public/images/foreign-hotel.jpg";
+import hotel from "../../../public/images/hotel.jpg";
 
 export default function Advertise() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import kids from "../images/header.jpg";
-import SearchBar from "../Ui/SearchBar";
+import kids from "../../../public/images/header.jpg";
+
 
 export default function Intro() {
   return (

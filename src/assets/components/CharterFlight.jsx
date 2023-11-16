@@ -1,12 +1,12 @@
 import React from "react";
-import ahv from "../images/ahv.jpg";
-import ban from "../images/ban.jpg";
-import kish from "../images/kish.jpg";
-import mhd from "../images/mhd.jpg";
-import shi from "../images/shi.jpg";
-import tab from "../images/tab.jpg";
-import teh from "../images/teh.jpg";
-import esf from "../images/esf.jpg";
+import ahv from "../../../public/images/ahv.jpg";
+import ban from "../../../public/images/ban.jpg";
+import kish from "../../../public/images/kish.jpg";
+import mhd from "../../../public/images/mhd.jpg";
+import shi from "../../../public/images/shi.jpg";
+import tab from "../../../public/images/tab.jpg";
+import teh from "../../../public/images/teh.jpg";
+import esf from "../../../public/images/esf.jpg";
 import Card from "../Ui/Card";
 
 export default function CharterFlight() {
