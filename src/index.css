@@ -124,6 +124,10 @@ body {
     appearance: none;
   } */
 
+  .no-scroll {
+   overflow: hidden;
+}
+
   .loader {
     width: 45px;
     aspect-ratio: 0.75;

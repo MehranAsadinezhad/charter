@@ -7,6 +7,12 @@ export default function FlightProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [selectedFlight, setSelectedFlight] = useState(null);
 
+  if(loading){
+    document.body.classList.add("no-scroll")
+  }else{
+    document.body.classList.remove("no-scroll");
+  }
+
   return (
     <FlightContext.Provider
       value={{

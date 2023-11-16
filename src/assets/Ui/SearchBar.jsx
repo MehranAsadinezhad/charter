@@ -85,7 +85,7 @@ export default function SearchBar() {
       {loading ? (
         <Loader />
       ) : (
-        <div className="relative bottom-28 z-50 flex flex-col items-center justify-center">
+        <div className="relative bottom-28 z-40 flex flex-col items-center justify-center">
           <div className="absolute ml-[114px] flex items-center gap-3">
             <a
               href="#."
@@ -135,7 +135,7 @@ export default function SearchBar() {
                   type="text"
                   name="origin"
                   id="origin"
-                  className="block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="block w-full cursor-pointer rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   placeholder="مبدا"
                 >
                   <option value="MHD">مشهد</option>
@@ -155,7 +155,7 @@ export default function SearchBar() {
                   type="text"
                   name="destination"
                   id="destination"
-                  className="block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+                  className="block w-full cursor-pointer rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                   placeholder="مقصد"
                 >
                   <option value="KIH">کیش</option>
