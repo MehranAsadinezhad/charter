@@ -19,6 +19,7 @@ export default {
         darkGray: "#575757",
         skyDark: "#2aacd5",
         gg: "#818181",
+        lightGray:"#d1d5db",
         darkBlue: "#0f6698",
         pink: "#c873eb",
         darkestBlue: "#3782aa",

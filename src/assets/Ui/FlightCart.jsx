@@ -3,6 +3,7 @@ import FlightIcon from "./FlightIcon";
 import { useNavigate } from "react-router-dom";
 import { FlightContext } from "../context/FlightContext";
 import { config } from "localforage";
+import { separate } from "../utils/helpers";
 
 export default function FlightCart({ flight }) {
   const navigate = useNavigate();
@@ -61,20 +62,26 @@ export default function FlightCart({ flight }) {
           <div className="flex items-center">
             <p className="ml-5">
               {flight.fromFa}{" "}
-              <span className="mx-2 text-lg font-bold">{flight.departureTime}</span>
+              <span className="mx-2 text-lg font-bold">
+                {flight.departureTime}
+              </span>
             </p>
             <FlightIcon />
             <p className="mr-5">
               {flight.toFa}{" "}
-              <span className="mx-2 text-lg font-bold">{flight.arrivalTime}</span>
+              <span className="mx-2 text-lg font-bold">
+                {flight.arrivalTime}
+              </span>
             </p>
           </div>
         </div>
       </div>
-      <div className="flex w-1/4 flex-col items-center justify-center gap-1 border-r-2 border-gray-200">
+      <div className="flex w-1/4 flex-col items-center justify-center gap-2 border-r-2 border-gray-200">
         <p className="font-iranBold text-xl tracking-wide text-primary">
-          {flight.adultPrice}
-          <span className="mr-1 text-sm text-gray-500">{flight.currencyTitle}</span>
+          {separate(flight.adultPrice)}
+          <span className="mr-1 text-xs text-gray-500">
+            {flight.currencyTitle}
+          </span>
         </p>
         <h1 className="text-sm font-semibold text-darkGray">
           نرخ رسمی ایرلاین

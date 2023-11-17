@@ -347,7 +347,7 @@ export default function Passenger() {
     <div className="my-14 grid grid-cols-4 gap-x-5 px-28 2xl:px-80">
       <div className="col-span-1 h-[550px] rounded-lg bg-white ring-1 ring-gray-300"></div>
       <div className="col-span-3">
-        <ul className="relative mb-5 flex h-20 w-full items-center overflow-hidden overflow-x-auto rounded-lg bg-white py-2 ring-1 ring-gray-300">
+        <ul className="relative mb-10 flex h-20 w-full items-center overflow-hidden overflow-x-auto rounded-lg bg-white py-2 ring-1 ring-gray-300">
           {datesArray?.map((date) => (
             <li
               key={Math.random()}

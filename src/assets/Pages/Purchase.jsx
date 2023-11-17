@@ -3,6 +3,7 @@ import { FlightContext } from "../context/FlightContext";
 import FlightIcon from "../Ui/FlightIcon";
 import { useNavigate } from "react-router-dom";
 import { IoMdPeople } from "react-icons/io";
+import { separate } from "../utils/helpers";
 
 export default function Purchase() {
   const { selectedFlight } = useContext(FlightContext);
@@ -65,7 +66,7 @@ export default function Purchase() {
             <div className="flex justify-between gap-5 text-darkGray">
               <p>بزرگسال</p>
               <p>
-                {selectedFlight.adultPrice}
+                {separate(selectedFlight.adultPrice)}
                 <span className="mr-1 text-sm">
                   {selectedFlight.currencyTitle}
                 </span>
@@ -75,7 +76,7 @@ export default function Purchase() {
             <div className="flex justify-between gap-5 text-darkGray">
               <p>مجموع</p>
               <p>
-                {selectedFlight.adultPrice}
+                {separate(selectedFlight.adultPrice)}
                 <span className="mr-1 text-sm">
                   {selectedFlight.currencyTitle}
                 </span>
@@ -85,10 +86,86 @@ export default function Purchase() {
         </div>
       </div>
 
-      <div className="w-full justify-between rounded-lg bg-white p-5 ring-1 ring-gray-300">
+      <div className="flex w-full flex-col justify-between gap-5 rounded-lg bg-white p-5 ring-1 ring-gray-300">
         <div className="flex items-center gap-2">
           <IoMdPeople className="text-3xl text-darkGray" />
           <h1 className="text-xl font-bold text-darkGray">مشخصات مسافران</h1>
+        </div>
+        <form>
+          <select
+            id="type"
+            name="type"
+            className="ring-lightGray rounded-full px-2 py-1 text-darkGray outline-none ring-1 transition-all duration-200 focus:ring-darkGray"
+          >
+            <option value="adl">بزرگسال (+12)</option>
+            <option value="chi">کودک (2-12)</option>
+            <option value="inf">نوزاد (0-2)</option>
+          </select>
+          <div className="my-5 grid grid-cols-4 gap-x-5 gap-y-8">
+            <input
+              className="ring-lightGray rounded-lg p-2 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              id="first_name"
+              name="first_name"
+              type="text"
+              placeholder="نام"
+              required
+            />
+            <input
+              className="ring-lightGray rounded-lg p-2 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              id="last_name"
+              name="last_name"
+              type="text"
+              placeholder="نام خانوادگی"
+              required
+            />
+            <select
+              className="ring-lightGray focus: rounded-lg p-2 text-gray-400 ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              id="gender"
+              name="gender"
+            >
+              <option value="" disabled selected>
+                جنسیت
+              </option>
+              <option value="male">مرد</option>
+              <option value="female">زن</option>
+            </select>
+            <input
+              className="ring-lightGray rounded-lg p-2 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              id="na_code"
+              name="na_code"
+              type="number"
+              placeholder="کد ملی / پاسپورت"
+              required
+            />
+            <input
+              className="ring-lightGray rounded-lg p-2 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              id="birthday"
+              name="birthday"
+              type="text"
+              onFocus={(e) => (e.target.type = "date")}
+              onBlur={(e) => (e.target.type = "text")}
+              placeholder="تاریخ تولد"
+              required
+            />
+            <select
+              className="ring-lightGray rounded-lg p-2 text-gray-400 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              id="nationality"
+              name="nationality"
+            >
+              <option value="" disabled selected>
+                ملیت
+              </option>
+              <option value="IRN">ایرانی</option>
+              <option value="FOR">اتباع خارجی</option>
+            </select>
+            {/* <input type="number" id="phone" placeholder="شماره موبایل"></input> */}
+          </div>
+          <hr className="mt-8 w-full"></hr>
+        </form>
+        <div>
+          <button className="rounded-lg px-5 py-2 text-primary ring-2 ring-primary transition-all duration-200 hover:bg-purple-50">
+            + اصافه کردن مسافر جدید
+          </button>
         </div>
       </div>
     </div>
