@@ -337,7 +337,9 @@ export default function Passenger() {
     date.setDate(date.getDate() + 1)
   ) {
     datesArray.push(
-      `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
+      `${date.getFullYear()}-${date.getMonth() + 1}-${
+        date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
+      }`,
     );
   }
 
@@ -354,7 +356,7 @@ export default function Passenger() {
               <div className="flex w-32 flex-col items-center justify-between gap-1">
                 <p className="text-center text-gray-400">{date}</p>
                 {availDates?.filter((item) => item[0] === date).length > 0 ? (
-                  <p className="text-lg font-semibold tracking-widest text-green-700">
+                  <p className="text-lg font-iranBold font-semibold tracking-widest text-green-700">
                     {availDates.filter((item) => item[0] === date).flat()[1]}
                   </p>
                 ) : (

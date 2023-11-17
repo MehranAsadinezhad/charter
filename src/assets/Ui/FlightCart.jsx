@@ -30,14 +30,14 @@ export default function FlightCart({ flight }) {
       // return data;
     } catch (err) {
       throw Error(err);
-    // } finally {
-    //   setLoading(false);
-    // }
+      // } finally {
+      //   setLoading(false);
+      // }
     }
   }
   return (
     <div className="flex h-[140px] w-full rounded-lg bg-white ring-1 ring-gray-300">
-      <div className="flex h-full w-3/4 gap-5 pb-2 pr-2 pt-2">
+      <div className="flex h-full w-3/4 gap-5 pb-2 pr-4 pt-2">
         <div className="flex flex-col items-center justify-between gap-1">
           <div className="flex flex-col items-center gap-1">
             <img
@@ -47,34 +47,34 @@ export default function FlightCart({ flight }) {
             ></img>
             <p>{flight.airelineNamePersian}</p>
           </div>
-          <a href="c#" className="tracking-wide text-primary">
+          <a href="c#" className="text-sm tracking-wide text-primary">
             اطلاعات پرواز
           </a>
         </div>
 
         <div className="mt-3 flex flex-col gap-5">
           <div className="flex items-center gap-3 ">
-            <p className="rounded-xl bg-light px-2 text-sm">سیستمی</p>
-            <p className="rounded-xl bg-light px-2 text-sm">اکونومی</p>
-            <p className="rounded-xl bg-light px-2 text-sm">Fokker 100</p>
+            <p className="rounded-xl bg-light px-2 text-sm">
+              {flight.cobinPersian}
+            </p>
           </div>
           <div className="flex items-center">
             <p className="ml-5">
               {flight.fromFa}{" "}
-              <span className="mx-2 text-lg font-bold">22:55</span>
+              <span className="mx-2 text-lg font-bold">{flight.departureTime}</span>
             </p>
             <FlightIcon />
             <p className="mr-5">
               {flight.toFa}{" "}
-              <span className="mx-2 text-lg font-bold">10:00</span>
+              <span className="mx-2 text-lg font-bold">{flight.arrivalTime}</span>
             </p>
           </div>
         </div>
       </div>
       <div className="flex w-1/4 flex-col items-center justify-center gap-1 border-r-2 border-gray-200">
-        <p className="text-xl font-extrabold tracking-wide text-primary">
+        <p className="font-iranBold text-xl tracking-wide text-primary">
           {flight.adultPrice}
-          <span className="mr-1 text-sm text-gray-500">ریال</span>
+          <span className="mr-1 text-sm text-gray-500">{flight.currencyTitle}</span>
         </p>
         <h1 className="text-sm font-semibold text-darkGray">
           نرخ رسمی ایرلاین
@@ -85,7 +85,11 @@ export default function FlightCart({ flight }) {
         >
           انتخاب پرواز
         </button>
-        <p className="text-red-500">{flight.capacity} صندلی باقی مانده</p>
+        {flight.capacity < 10 && (
+          <p className="text-sm text-red-500">
+            {flight.capacity} صندلی باقی مانده
+          </p>
+        )}
       </div>
     </div>
   );

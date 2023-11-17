@@ -6,6 +6,8 @@ export default {
     extend: {
       fontFamily: {
         primary: "Vazir",
+        iranBold: "iran-bold",
+        iranReg: "iran-regular",
       },
       colors: {
         primary: "#a02777",

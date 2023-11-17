@@ -4,7 +4,17 @@
 
 @font-face {
   font-family: Vazir;
-  src: url("assets/Vazir.ttf") format("truetype");
+  src: url("assets/fonts/Vazir.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iran-bold;
+  src: url("assets/fonts/iransansx-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: iran-regular;
+  src: url("assets/fonts/iransansx-regular.woff") format("woff");
 }
 
 html {
