@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import FlightCart from "../Ui/FlightCart";
+import PassengerCalendar from "../Ui/PassengerCalendar"
 import { FlightContext } from "../context/FlightContext";
 import { config } from "localforage";
 import { useNavigate } from "react-router-dom";
@@ -321,8 +322,6 @@ const hugeDatas = {
 };
 
 export default function Passenger() {
-
-
   const availDates = Object.entries(hugeDatas.KHD.THR.minDate);
   const extractDates = Object.keys(hugeDatas.KHD.THR.minDate);
   const startDate = extractDates.reduce(function (a, b) {
@@ -346,30 +345,15 @@ export default function Passenger() {
     );
   }
 
-
   return (
     <div className="my-14 grid grid-cols-4 gap-x-5 px-28 2xl:px-80">
       <div className="col-span-1 h-[550px] rounded-lg bg-white ring-1 ring-gray-300"></div>
       <div className="col-span-3">
         <ul className="relative mb-10 flex h-20 w-full items-center overflow-hidden overflow-x-auto rounded-lg bg-white py-2 ring-1 ring-gray-300">
           {datesArray?.map((date) => (
-            // <li
-            //   date={date}
-            //   key={Math.random()}
-            //   className="flex cursor-pointer flex-col border-l-2 border-gray-300 p-1 text-center duration-200 hover:bg-purple-50"
-            // >
-            //   <div className="flex w-32 flex-col items-center justify-between gap-1">
-            //     <p className="text-center text-gray-400">{date}</p>
-            //     {availDates?.filter((item) => item[0] === date).length > 0 ? (
-            //       <p className="font-iranBold text-lg font-semibold tracking-widest text-green-700">
-            //         {availDates.filter((item) => item[0] === date).flat()[1]}
-            //       </p>
-            //     ) : (
-            //       <p className="text-red-600" desa>وجود ندارد</p>
-            //     )}
-            //   </div>
-            // </li>
-            <Passenger date={date} key={Math.random()} availDates={availDates}/>
+            <PassengerCalendar date={date}
+              key={Math.random()}
+              availDates={availDates}/>
           ))}
         </ul>
 
