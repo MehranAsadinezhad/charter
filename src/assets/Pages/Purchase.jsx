@@ -7,16 +7,13 @@ import { separate } from "../utils/helpers";
 import Timer from "../Ui/Timer";
 
 export default function Purchase() {
-  const { selectedFlight, setSecondsRemaining, secondsRemaining } =
-    useContext(FlightContext);
+  const { selectedFlight } = useContext(FlightContext);
   console.log(selectedFlight);
   const navigate = useNavigate();
-  const min = Math.floor(secondsRemaining / 60);
-  const sec = secondsRemaining % 60;
 
   return (
     <div className="flex flex-col items-center gap-5 px-32 2xl:px-72 ">
-      <div className="flex my-10 h-[220px] w-full justify-between rounded-lg bg-white ring-1 ring-gray-300">
+      <div className="my-10 flex h-[220px] w-full justify-between rounded-lg bg-white ring-1 ring-gray-300">
         <div className="flex flex-col gap-3 p-3 px-6">
           <div className="flex items-center gap-3">
             <p className="rounded-full bg-purple-100 px-4 py-1 text-sm text-primary">
@@ -97,11 +94,7 @@ export default function Purchase() {
             <IoMdPeople className="text-3xl text-darkGray" />
             <h1 className="text-xl font-bold text-darkGray">مشخصات مسافران</h1>
           </div>
-          <Timer>
-              {/* <p>{min < 10 ? `0${min}` : min}</p>:
-              <p>{sec < 10 ? `0${sec}` : sec}</p> */}
-             
-          </Timer>
+          <Timer></Timer>
         </div>
         <form>
           <select
