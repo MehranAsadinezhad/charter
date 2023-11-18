@@ -5,11 +5,13 @@ const FlightContext = createContext();
 export default function FlightProvider({ children }) {
   const [availFlights, setAvailFlights] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [searchFlight, setSearchFlight] = useState(null);
   const [selectedFlight, setSelectedFlight] = useState(null);
+  const [secondsRemaining, setSecondsRemaining] = useState(900);
 
-  if(loading){
-    document.body.classList.add("no-scroll")
-  }else{
+  if (loading) {
+    document.body.classList.add("no-scroll");
+  } else {
     document.body.classList.remove("no-scroll");
   }
 
@@ -21,7 +23,11 @@ export default function FlightProvider({ children }) {
         loading,
         setLoading,
         selectedFlight,
-        setSelectedFlight
+        setSelectedFlight,
+        secondsRemaining,
+        setSecondsRemaining,
+        setSearchFlight,
+        searchFlight,
       }}
     >
       {children}

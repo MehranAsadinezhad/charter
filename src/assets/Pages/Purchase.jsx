@@ -4,11 +4,16 @@ import FlightIcon from "../Ui/FlightIcon";
 import { useNavigate } from "react-router-dom";
 import { IoMdPeople } from "react-icons/io";
 import { separate } from "../utils/helpers";
+import Timer from "../Ui/Timer";
 
 export default function Purchase() {
-  const { selectedFlight } = useContext(FlightContext);
+  const { selectedFlight, setSecondsRemaining, secondsRemaining } =
+    useContext(FlightContext);
   console.log(selectedFlight);
   const navigate = useNavigate();
+  const min = Math.floor(secondsRemaining / 60);
+  const sec = secondsRemaining % 60;
+
   return (
     <div className="my-10 flex flex-col items-center gap-5 px-32 2xl:px-72 ">
       <div className="flex h-[220px] w-full justify-between rounded-lg bg-white ring-1 ring-gray-300">
@@ -87,15 +92,22 @@ export default function Purchase() {
       </div>
 
       <div className="flex w-full flex-col justify-between gap-5 rounded-lg bg-white p-5 ring-1 ring-gray-300">
-        <div className="flex items-center gap-2">
-          <IoMdPeople className="text-3xl text-darkGray" />
-          <h1 className="text-xl font-bold text-darkGray">مشخصات مسافران</h1>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <IoMdPeople className="text-3xl text-darkGray" />
+            <h1 className="text-xl font-bold text-darkGray">مشخصات مسافران</h1>
+          </div>
+          <Timer>
+              {/* <p>{min < 10 ? `0${min}` : min}</p>:
+              <p>{sec < 10 ? `0${sec}` : sec}</p> */}
+             
+          </Timer>
         </div>
         <form>
           <select
             id="type"
             name="type"
-            className="ring-lightGray rounded-full px-2 py-1 text-darkGray outline-none ring-1 transition-all duration-200 focus:ring-darkGray"
+            className="rounded-full px-2 py-1 text-darkGray outline-none ring-1 ring-lightGray transition-all duration-200 focus:ring-darkGray"
           >
             <option value="adl">بزرگسال (+12)</option>
             <option value="chi">کودک (2-12)</option>
@@ -103,7 +115,7 @@ export default function Purchase() {
           </select>
           <div className="my-5 grid grid-cols-4 gap-x-5 gap-y-8">
             <input
-              className="ring-lightGray rounded-lg p-2 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              className="rounded-lg p-2 outline-none ring-1 ring-lightGray transition-all duration-200 focus:ring-2 focus:ring-darkGray"
               id="first_name"
               name="first_name"
               type="text"
@@ -111,7 +123,7 @@ export default function Purchase() {
               required
             />
             <input
-              className="ring-lightGray rounded-lg p-2 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              className="rounded-lg p-2 outline-none ring-1 ring-lightGray transition-all duration-200 focus:ring-2 focus:ring-darkGray"
               id="last_name"
               name="last_name"
               type="text"
@@ -119,7 +131,7 @@ export default function Purchase() {
               required
             />
             <select
-              className="ring-lightGray focus: rounded-lg p-2 text-gray-400 ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              className="focus: rounded-lg p-2 text-gray-400 ring-1 ring-lightGray transition-all duration-200 focus:ring-2 focus:ring-darkGray"
               id="gender"
               name="gender"
             >
@@ -130,7 +142,7 @@ export default function Purchase() {
               <option value="female">زن</option>
             </select>
             <input
-              className="ring-lightGray rounded-lg p-2 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              className="rounded-lg p-2 outline-none ring-1 ring-lightGray transition-all duration-200 focus:ring-2 focus:ring-darkGray"
               id="na_code"
               name="na_code"
               type="number"
@@ -138,7 +150,7 @@ export default function Purchase() {
               required
             />
             <input
-              className="ring-lightGray rounded-lg p-2 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              className="rounded-lg p-2 outline-none ring-1 ring-lightGray transition-all duration-200 focus:ring-2 focus:ring-darkGray"
               id="birthday"
               name="birthday"
               type="text"
@@ -148,7 +160,7 @@ export default function Purchase() {
               required
             />
             <select
-              className="ring-lightGray rounded-lg p-2 text-gray-400 outline-none ring-1 transition-all duration-200 focus:ring-2 focus:ring-darkGray"
+              className="rounded-lg p-2 text-gray-400 outline-none ring-1 ring-lightGray transition-all duration-200 focus:ring-2 focus:ring-darkGray"
               id="nationality"
               name="nationality"
             >

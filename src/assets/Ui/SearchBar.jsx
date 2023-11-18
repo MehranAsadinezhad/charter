@@ -14,7 +14,7 @@ export default function SearchBar() {
   // const [arrival, setArrival] = useState("");
   // const [date, setDate] = useState("");
   const navigate = useNavigate();
-  const { setAvailFlights, setLoading, loading } = useContext(FlightContext);
+  const { setAvailFlights, setLoading, loading, setSearchFlight } = useContext(FlightContext);
 
   async function handleSubmit(e) {
     try {
@@ -31,6 +31,7 @@ export default function SearchBar() {
         return;
       }
       const value = Object.fromEntries(formdata);
+      setSearchFlight(value)
       console.log(value);
       const res = await fetch(`${config.api}/avail`, {
         method: "POST",

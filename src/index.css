@@ -135,8 +135,8 @@ body {
   } */
 
   .no-scroll {
-   overflow: hidden;
-}
+    overflow: hidden;
+  }
 
   .loader {
     width: 45px;
@@ -175,5 +175,26 @@ body {
         50% 100%,
         100% 0%;
     }
+  }
+  @keyframes countdown {
+    /* (F0) THE IDEA - USE KEYFRAMES TO SHIFT SLIDES *
+    0% { bottom: 0; } 20% { bottom: 100%; }
+    40% { bottom: 200%; } 60% { bottom: 300%; }
+    80% { bottom: 400%; } 100% { bottom: 500%; }
+  
+    /* (F1) BUT THE ABOVE WILL SHIFT NON-STOP */
+    /* SO WE ADD PAUSES BETWEEN EACH SLIDE */
+    0% { bottom: 0; } 16% { bottom: 0; }
+    20% { bottom: 100%; } 36% { bottom: 100%; }
+    40% { bottom: 200%; } 56% { bottom: 200%; }
+    60% { bottom: 300%; } 76% { bottom: 300%; }
+    80% { bottom: 400%; } 96% { bottom: 400%; }
+    100% { bottom: 500%; }
+  }
+   
+  /* (F2) 5 SLIDES = 5 SECONDS */
+  .cmove {
+    animation: countdown linear 5s;
+    animation-fill-mode: forwards;
   }
 }
