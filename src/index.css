@@ -197,4 +197,8 @@ body {
     animation: countdown linear 5s;
     animation-fill-mode: forwards;
   }
+
+  .modal-box{
+    @apply max-w-2xl
+  }
 }

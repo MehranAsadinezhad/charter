@@ -358,6 +358,12 @@ export default function Passenger() {
           ))}
         </ul>
 
+        <div className="flex items-center gap-5 my-10">
+          <button className="text-primary p-2 bg-white  hover:bg-purple-100 duration-200 transition-all rounded-lg">روز قبل</button>
+          <button className="text-primary p-2 bg-white  hover:bg-purple-100 duration-200 transition-all rounded-lg">روز بعد</button>
+          <PreCalendar/>
+        </div>
+
         <div className="flex flex-col gap-5">
           {fakeFlight?.flights?.map((flight) => (
             <FlightCart flight={flight} key={Math.random()} />
@@ -365,9 +371,5 @@ export default function Passenger() {
         </div>
       </div>
     </div>
-
-    // <>
-    // <PreCalendar/>
-    // </>
   );
 }
