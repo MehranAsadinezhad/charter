@@ -14,9 +14,12 @@ export default function Timer() {
   const sec = secondsRemaining % 60;
   return (
     <div className="relative flex flex-row-reverse items-center justify-center gap-1 bg-gray-100 p-2 font-iranBold text-primary">
-      <p className="">{min < 10 && 0}</p>
-      <p className="">{min}</p>:<p className="">{sec < 10 && 0}</p>
-      <p className="">{sec}</p>
+      <span className="countdown">
+        <span style={{ "--value": min }}></span>
+      </span>:
+      <span className="countdown">
+        <span style={{ "--value": sec }}></span>
+      </span>
     </div>
   );
 }

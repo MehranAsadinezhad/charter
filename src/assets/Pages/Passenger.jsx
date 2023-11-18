@@ -4,6 +4,7 @@ import PassengerCalendar from "../Ui/PassengerCalendar"
 import { FlightContext } from "../context/FlightContext";
 import { config } from "localforage";
 import { useNavigate } from "react-router-dom";
+import PreCalendar from "../Ui/preCalendar";
 
 const fakeFlight = {
   success: true,
@@ -364,5 +365,9 @@ export default function Passenger() {
         </div>
       </div>
     </div>
+
+    // <>
+    // <PreCalendar/>
+    // </>
   );
 }
