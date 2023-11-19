@@ -9,3 +9,8 @@ export function separate(Number) {
   y = y.replace(rgx, "$1" + "," + "$2");
   return y + z;
 }
+
+export function getDateFormat(uDate,option){
+  let date = new Intl.DateTimeFormat('fa-IR', option).format(uDate);
+  return date;
+} 

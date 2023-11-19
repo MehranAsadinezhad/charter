@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { FlightContext } from "../context/FlightContext";
 import { myConfig } from "../../../public/myConfig";
 import { useNavigate } from "react-router-dom";
+import { getDateFormat } from "../utils/helpers";
 
 export default function BoxPreCalendar({
   date,
@@ -48,13 +49,32 @@ export default function BoxPreCalendar({
     }
   }
 
+  const todayFa = {
+    day: getDateFormat(new Date(date), { day: "2-digit" }),
+    month: getDateFormat(new Date(date), { month: "numeric" }),
+    monthTitle: getDateFormat(new Date(date), { month: "long" }),
+    year: getDateFormat(new Date(date), { year: "numeric" }),
+    dayWeek: getDateFormat(new Date(date), { weekday: "long" }),
+  };
+
   return (
     <div className="flex flex-col items-center gap-1">
       <div className="flex items-center justify-between gap-x-3 gap-y-4 text-xs text-light">
-        <p>{new Date(date).toDateString().slice(0, 3)}</p>
-        <p className="">
-          {new Date(date).getMonth()}/{new Date(date).getDate()}
-        </p>
+        {intCal ? (
+          <>
+            <p>{new Date(date).toDateString().slice(0, 3)}</p>
+            <p className="">
+              {new Date(date).getMonth()}/{new Date(date).getDate()}
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="font-iranReg">{todayFa.dayWeek}</p>
+            <p className="font-iranReg">
+              {todayFa.month}/{todayFa.day}
+            </p>
+          </>
+        )}
       </div>
       <div
         onClick={handleNewDate}

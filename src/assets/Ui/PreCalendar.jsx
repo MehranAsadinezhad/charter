@@ -83,7 +83,7 @@ export default function PreCalendar() {
                     }}
                     className="cursor-pointer rounded-lg bg-secondary px-2 py-0.5 text-primary"
                   >
-                    تبدیل تقویم به میلادی
+                    تبدیل تقویم به {`${intCal ? "شمسی" : "میلادی"}`}
                   </p>
                 </div>
               </div>

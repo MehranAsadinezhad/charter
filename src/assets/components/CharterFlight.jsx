@@ -27,7 +27,7 @@ export default function CharterFlight() {
           بلیط چارتر
         </h1>
       </div>
-      <div className="mx-32 my-3 grid grid-cols-4 gap-6">
+      <div className="mx-32 my-5 grid grid-cols-4 gap-6 2xl:mx-64">
         {options.map((city) => (
           <Card key={city.id} option={city} />
         ))}

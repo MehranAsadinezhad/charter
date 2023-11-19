@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 
-export default function Timer({setSecondsRemaining,secondsRemaining}) {
+export default function Timer() {
+  const [secondsRemaining, setSecondsRemaining] = useState(900);
   useEffect(() => {
     const time = setInterval(() => {
       setSecondsRemaining(() => secondsRemaining - 1);
