@@ -1,25 +1,25 @@
 import React, { useContext } from "react";
 import { FlightContext } from "../context/FlightContext";
 import { useNavigate } from "react-router-dom";
-import { config } from "localforage";
+import {myConfig} from "../../../public/myConfig"
 
 export default function PassengerCalendar({ date, availDates }) {
   const { setLoading, setSearchFlight, searchFlight, setAvailFlights } =
     useContext(FlightContext);
   const navigate = useNavigate();
-  console.log();
 
-  async function handleNewAvail(e) {
+  async function handleNewAvail(newDate) {
     const checkDate = availDates
       .map((item) => item[0])
       .filter((c) => c === date);
     if (!checkDate.length > 0) return;
 
     try {
-      setLoading(true);
-      setSearchFlight({ ...searchFlight, date: date });
       console.log(searchFlight);
-      const res = await fetch(`${config.api}/avail`, {
+      setLoading(true);
+      setSearchFlight({ ...searchFlight, date: newDate });
+      console.log(searchFlight);
+      const res = await fetch(`${myConfig.api}/avail`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function PassengerCalendar({ date, availDates }) {
 
   return (
     <li
-      onClick={handleNewAvail}
+      onClick={()=>handleNewAvail(date)}
       className="flex cursor-pointer flex-col border-l-2 border-gray-300 p-1 text-center duration-200 hover:bg-purple-50"
     >
       <div className="flex w-32 flex-col items-center justify-between gap-1">

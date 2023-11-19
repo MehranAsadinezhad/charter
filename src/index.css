@@ -136,10 +136,12 @@ body {
 
   .no-scroll {
     overflow: hidden;
+    
   }
 
   .loader {
     width: 45px;
+    
     aspect-ratio: 0.75;
     --c: no-repeat linear-gradient(#a02777 0 0);
     background:
@@ -198,7 +200,11 @@ body {
     animation-fill-mode: forwards;
   }
 
+  .popup {
+    background: linear-gradient(to bottom,#989898 0,#864b7c 34%,#613658 64%,#63074f 100%)!important;
+}
+
   .modal-box{
-    @apply max-w-2xl
+    @apply max-w-[600px]
   }
 }

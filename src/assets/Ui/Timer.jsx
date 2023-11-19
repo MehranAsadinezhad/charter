@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
-import { FlightContext } from "../context/FlightContext";
+import React, { useEffect } from "react";
 
-export default function Timer() {
-  const { setSecondsRemaining, secondsRemaining } = useContext(FlightContext);
+
+export default function Timer({setSecondsRemaining,secondsRemaining}) {
   useEffect(() => {
     const time = setInterval(() => {
       setSecondsRemaining(() => secondsRemaining - 1);
@@ -13,7 +12,7 @@ export default function Timer() {
   const min = Math.floor(secondsRemaining / 60);
   const sec = secondsRemaining % 60;
   return (
-    <div className="relative flex flex-row-reverse items-center justify-center gap-1 bg-gray-100 p-2 font-iranBold text-primary">
+    <div className="relative flex flex-row-reverse rounded-lg items-center justify-center gap-1 bg-gray-100 p-2 font-iranBold text-primary">
       <span className="countdown">
         <span style={{ "--value": min }}></span>
       </span>:

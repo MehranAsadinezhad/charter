@@ -2,40 +2,39 @@ import React, { useContext } from "react";
 import FlightIcon from "./FlightIcon";
 import { useNavigate } from "react-router-dom";
 import { FlightContext } from "../context/FlightContext";
-import { config } from "localforage";
 import { separate } from "../utils/helpers";
+import { myConfig } from "../../../public/myConfig";
 
 export default function FlightCart({ flight }) {
   const navigate = useNavigate();
-  const { setSelectedFlight, setLoading } = useContext(FlightContext);
+  const { setSelectedFlight, setLoading, availFlights } = useContext(FlightContext);
 
   async function handlePreReserved() {
     try {
-      // setLoading(true);
+      setLoading(true);
       setSelectedFlight(flight);
-      // const value = {
-      //   flight_key: flight.id,
-      //   search_id: 1,
-      // };
-      // const res = await fetch(`${config.api}/pre-reserve`, {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     Accept: "application/json",
-      //   },
-      //   body: JSON.stringify(value),
-      // });
-      // const data = await res.json();
-      // console.log(data);
+      const value = {
+        flight_key: flight.flight_key,
+        search_id: availFlights.search_id,
+      };
+      const res = await fetch(`${myConfig.api}/pre-reserve`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(value),
+      });
+      const data = await res.json();
+      console.log(data);
       navigate("/passenger/id:");
-      // return data;
+      return data;
     } catch (err) {
       throw Error(err);
-      // } finally {
-      //   setLoading(false);
-      // }
+      } finally {
+        setLoading(false);
+      }
     }
-  }
   return (
     <div className="flex h-[140px] w-full rounded-lg bg-white ring-1 ring-gray-300">
       <div className="flex h-full w-3/4 gap-5 pb-2 pr-4 pt-2">
