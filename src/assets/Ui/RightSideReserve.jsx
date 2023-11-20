@@ -62,13 +62,13 @@ export function RightSideReserve({selectedFlight,todayFa}) {
                 </li>
                 <li className="flex items-center justify-between gap-2 border-b-2 border-white py-2">
                     <div className="flex items-center gap-2">
-                        <SiCriticalrole/>
+                        <SiCriticalrole className="text-lg font-bold"/>
                         <a>قوانین کنسلی</a>
                     </div>
                     <a>کلیک کنید</a>
                 </li>
                 <li className="flex items-center gap-2 border-b-2 border-white py-2">
-                    <MdPhone/>
+                    <MdPhone className="text-lg font-bold"/>
                     <p>پشتیبانی</p>
                 </li>
                 <li className="flex flex-col gap-1 py-2">

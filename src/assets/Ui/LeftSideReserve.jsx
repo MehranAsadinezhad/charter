@@ -8,7 +8,7 @@ export function LeftSideReserve({ selectedFlight }) {
   return (
     <div className="col-span-9 flex flex-col">
       <div className="flex items-center gap-10">
-        <button className="rounded-lg bg-blue-700 p-2 text-white">
+        <button className="rounded-lg bg-sky-700 p-2 text-white">
           افزودن مسافر جدید
         </button>
         <div className="flex items-center gap-2">
@@ -107,7 +107,7 @@ export function LeftSideReserve({ selectedFlight }) {
           </div>
         </div>
       </div>
-      <button className="bg-secondary px-8 rounded-lg py-1 self-end">
+      <button className="bg-secondary hover:bg-sky-700 hover:text-white duration-300 transition-all px-8 rounded-lg py-1 self-end">
         رزرو
       </button>
     </div>

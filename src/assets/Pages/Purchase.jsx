@@ -1,49 +1,59 @@
-import React, {useContext, useState} from "react";
-import {FlightContext} from "../context/FlightContext";
+import React, { useContext, useState } from "react";
+import { FlightContext } from "../context/FlightContext";
 import FlightIcon from "../Ui/FlightIcon";
-import {useNavigate} from "react-router-dom";
-import {IoMdPeople} from "react-icons/io";
-import {getDateFormat, separate} from "../utils/helpers";
+import { useNavigate } from "react-router-dom";
+import { IoMdPeople } from "react-icons/io";
+import { getDateFormat, separate } from "../utils/helpers";
 import Timer from "../Ui/Timer";
 import Loader from "../Ui/Loader";
 import FormExtraPassenger from "../Ui/FormExtraPassenger";
-import {LuPlane} from "react-icons/lu";
-import {TbMoneybag} from "react-icons/tb";
-import {IoMdTime} from "react-icons/io";
-import {BsInfoCircle} from "react-icons/bs";
-import {SiCriticalrole} from "react-icons/si";
-import {MdPhone} from "react-icons/md";
-import {FiPlusCircle} from "react-icons/fi";
-import {IoPersonSharp} from "react-icons/io5";
-import {RightSideReserve} from "../Ui/RightSideReserve.jsx";
-import {LeftSideReserve} from "../Ui/LeftSideReserve.jsx";
+import { LuPlane } from "react-icons/lu";
+import { TbMoneybag } from "react-icons/tb";
+import { IoMdTime } from "react-icons/io";
+import { BsInfoCircle } from "react-icons/bs";
+import { SiCriticalrole } from "react-icons/si";
+import { MdPhone } from "react-icons/md";
+import { FiPlusCircle } from "react-icons/fi";
+import { IoPersonSharp } from "react-icons/io5";
+import { RightSideReserve } from "../Ui/RightSideReserve.jsx";
+import { LeftSideReserve } from "../Ui/LeftSideReserve.jsx";
 
 export default function Purchase() {
-    const {selectedFlight, loading} = useContext(FlightContext);
-    const [formId, setFormId] = useState([0]);
+  const { selectedFlight, loading } = useContext(FlightContext);
+  const [formId, setFormId] = useState([0]);
 
-    function addForm() {
-        const newFormId = formId[formId.length - 1] + 1;
-        setFormId([...formId, newFormId]);
-    }
+  function addForm() {
+    const newFormId = formId[formId.length - 1] + 1;
+    setFormId([...formId, newFormId]);
+  }
 
-    console.log(selectedFlight);
-    const navigate = useNavigate();
+  console.log(selectedFlight);
+  const navigate = useNavigate();
 
-    const todayFa = {
-        day: getDateFormat(new Date(selectedFlight?.departureDate), {day: "2-digit"}),
-        month: getDateFormat(new Date(selectedFlight?.departureDate), {month: "numeric"}),
-        monthTitle: getDateFormat(new Date(selectedFlight?.departureDate), {month: "long"}),
-        year: getDateFormat(new Date(selectedFlight?.departureDate), {year: "numeric"}),
-        dayWeek: getDateFormat(new Date(selectedFlight?.departureDate), {weekday: "long"}),
-    };
+  const todayFa = {
+    day: getDateFormat(new Date(selectedFlight?.departureDate), {
+      day: "2-digit",
+    }),
+    month: getDateFormat(new Date(selectedFlight?.departureDate), {
+      month: "numeric",
+    }),
+    monthTitle: getDateFormat(new Date(selectedFlight?.departureDate), {
+      month: "long",
+    }),
+    year: getDateFormat(new Date(selectedFlight?.departureDate), {
+      year: "numeric",
+    }),
+    dayWeek: getDateFormat(new Date(selectedFlight?.departureDate), {
+      weekday: "long",
+    }),
+  };
 
-    return (
-        <>
-            {loading && <Loader/>}
-            <div className="flex flex-col items-center gap-5 px-32 2xl:px-72 ">
-                {/*last template*/}
-                {/* <div className="my-10 flex h-[220px] w-full justify-between rounded-lg bg-white ring-1 ring-gray-300">
+  return (
+    <>
+      {loading && <Loader />}
+      <div className="flex flex-col items-center gap-5 px-32 2xl:px-72 ">
+        {/* last template */}
+        {/* <div className="my-10 flex h-[220px] w-full justify-between rounded-lg bg-white ring-1 ring-gray-300">
           <div className="flex flex-col gap-3 p-3 px-6">
             <div className="flex items-center gap-3">
               <p className="rounded-full bg-purple-100 px-4 py-1 text-sm text-primary">
@@ -148,11 +158,11 @@ export default function Purchase() {
           </div>
         </div> */}
 
-                <div className="popup inset-0 backdrop-brightness-50 rounded-lg grid grid-cols-12 gap-5 w-[1150px] my-40 p-7">
-                    <RightSideReserve todayFa={todayFa} selectedFlight={selectedFlight}/>
-                    <LeftSideReserve selectedFlight={selectedFlight}/>
-                </div>
-            </div>
-        </>
-    );
+        <div className="popup inset-0 my-24 grid w-[1150px] grid-cols-12 gap-5 rounded-lg p-7 backdrop-brightness-50">
+          <RightSideReserve todayFa={todayFa} selectedFlight={selectedFlight} />
+          <LeftSideReserve selectedFlight={selectedFlight} />
+        </div>
+      </div>
+    </>
+  );
 }
