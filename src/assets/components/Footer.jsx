@@ -21,7 +21,7 @@ import saman from "../../../public/images/samandeh.png";
 
 export default function Footer() {
   return (
-    <footer className="relative h-[570px] w-screen overflow-hidden bg-darkPrimary">
+    <footer className="relative h-[600px] w-screen overflow-hidden bg-darkPrimary">
       <div className="rotate absolute right-0 z-50 block w-[1600px] overflow-hidden text-center 2xl:w-full">
         <svg
           width="1998"
