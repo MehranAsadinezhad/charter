@@ -31,11 +31,11 @@ export default function Purchase() {
     const navigate = useNavigate();
 
     const todayFa = {
-        day: getDateFormat(new Date(selectedFlight.departureDate), {day: "2-digit"}),
-        month: getDateFormat(new Date(selectedFlight.departureDate), {month: "numeric"}),
-        monthTitle: getDateFormat(new Date(selectedFlight.departureDate), {month: "long"}),
-        year: getDateFormat(new Date(selectedFlight.departureDate), {year: "numeric"}),
-        dayWeek: getDateFormat(new Date(selectedFlight.departureDate), {weekday: "long"}),
+        day: getDateFormat(new Date(selectedFlight?.departureDate), {day: "2-digit"}),
+        month: getDateFormat(new Date(selectedFlight?.departureDate), {month: "numeric"}),
+        monthTitle: getDateFormat(new Date(selectedFlight?.departureDate), {month: "long"}),
+        year: getDateFormat(new Date(selectedFlight?.departureDate), {year: "numeric"}),
+        dayWeek: getDateFormat(new Date(selectedFlight?.departureDate), {weekday: "long"}),
     };
 
     return (
@@ -148,9 +148,9 @@ export default function Purchase() {
           </div>
         </div> */}
 
-                <div className="popup rounded-lg grid grid-cols-12 gap-5 w-[1150px] my-40 p-7">
+                <div className="popup inset-0 backdrop-brightness-50 rounded-lg grid grid-cols-12 gap-5 w-[1150px] my-40 p-7">
                     <RightSideReserve todayFa={todayFa} selectedFlight={selectedFlight}/>
-                    <LeftSideReserve/>
+                    <LeftSideReserve selectedFlight={selectedFlight}/>
                 </div>
             </div>
         </>
