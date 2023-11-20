@@ -10,6 +10,14 @@ export function separate(Number) {
   return y + z;
 }
 
+  // const todayFa = {
+  //   day: getDateFormat(new Date(date), { day: "2-digit" }),
+  //   month: getDateFormat(new Date(date), { month: "numeric" }),
+  //   monthTitle: getDateFormat(new Date(date), { month: "long" }),
+  //   year: getDateFormat(new Date(date), { year: "numeric" }),
+  //   dayWeek: getDateFormat(new Date(date), { weekday: "long" }),
+  // };
+
 export function getDateFormat(uDate,option){
   let date = new Intl.DateTimeFormat('fa-IR', option).format(uDate);
   return date;
