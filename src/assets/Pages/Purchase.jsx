@@ -151,30 +151,30 @@ export default function Purchase() {
                   <LuPlane className="text-xl" />
                 </div>
                 <ul className="p-2">
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <TbMoneybag/>
                     <p>مبلغ قابل پرداخت</p>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <p className="font-iranBold">{separate(selectedFlight.adultPrice)}</p>
                     <p>{selectedFlight.currencyTitle}</p>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <IoPersonSharp/>
                     <p>مسافر</p>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <IoMdTime/>
                     <p>زمان باقیمانده رزرو</p>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <Timer/>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <BsInfoCircle/>
                     <p>اطلاعات پرواز</p>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <div>
                       <p>تاریخ</p>
                       <p>روز</p>
@@ -194,18 +194,18 @@ export default function Purchase() {
                       <img alt="logo" src={selectedFlight.airlineLogo}></img>
                     </div>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <div>
                       <SiCriticalrole/>
                       <a>قوانین کنسلی</a>
                     </div>
                     <a>کلیک کنید</a>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <MdPhone/>
                     <p>پشتیبانی</p>
                   </li>
-                  <li className="flex items-center gap-2">
+                  <li className="flex flex-col gap-1 py-2">
                     <p>07691006118</p>
                     <p>09027006118</p>
                   </li>
