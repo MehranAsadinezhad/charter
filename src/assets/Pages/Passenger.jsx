@@ -3,9 +3,12 @@ import FlightCart from "../Ui/FlightCart";
 import PassengerCalendar from "../Ui/PassengerCalendar";
 import { FlightContext } from "../context/FlightContext";
 import { config } from "localforage";
+import { PiTrainFill } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import PreCalendar from "../Ui/PreCalendar";
 import Loader from "../Ui/Loader";
+import { ImHome3 } from "react-icons/im";
+import PreFlightCard from "../Ui/preFlightCard";
 
 // const fakeFlight = {
 //   success: true,
@@ -348,6 +351,7 @@ export default function Passenger() {
   }
 
   const { availFlights, loading } = useContext(FlightContext);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -364,7 +368,33 @@ export default function Passenger() {
             ))}
           </ul>
 
-          <div className="my-10 flex items-center gap-5">
+          <div>
+            <h1 className="border-b-2 border-white">
+              <span>
+                {" "}
+                بلیط هواپیما {availFlights?.flights[0].fromFa} به{" "}
+                {availFlights?.flights[0].toFa}{" "}
+              </span>
+              <span className="font-iranReg">
+                {availFlights?.flights[0].departureDateJalali.year}/
+                {availFlights?.flights[0].departureDateJalali.mon}/
+                {availFlights?.flights[0].departureDateJalali.mday}
+              </span>
+              <span>
+                {" "}
+                ({availFlights?.flights[0].departureDateJalali.weekday}){" "}
+              </span>
+            </h1>
+          </div>
+
+          <div className="my-2 flex items-center gap-5">
+            <button
+              onClick={() => navigate("/")}
+              className="flex items-center gap-2 rounded-lg bg-sky-700 p-1.5 text-white transition-all duration-200 hover:bg-sky-800"
+            >
+              <ImHome3 />
+              صفحه اصلی
+            </button>
             <button className="rounded-lg bg-white p-2  text-primary transition-all duration-200 hover:bg-purple-100">
               روز قبل
             </button>
@@ -374,9 +404,24 @@ export default function Passenger() {
             <PreCalendar />
           </div>
 
+          <div className="my-5 flex items-center gap-5">
+            <button className="flex items-center gap-2 rounded-t-lg px-2 bg-gray-400 p-1 text-white transition-all duration-200 focus:bg-secondary focus:text-primary">
+              <ImHome3 />
+              قیمت
+            </button>
+            <button className="flex items-center gap-2 rounded-t-lg px-2 bg-gray-400 p-1 text-white transition-all duration-200 focus:bg-secondary focus:text-primary">
+              <ImHome3 />
+              زمان
+            </button>
+            <button className="flex items-center gap-2 rounded-t-lg px-2 bg-gray-400 p-1 text-white transition-all duration-200 focus:bg-secondary focus:text-primary">
+              <PiTrainFill className="text-xl" />
+              قطار
+            </button>
+          </div>
+
           <div className="flex flex-col gap-5">
             {availFlights?.flights?.map((flight) => (
-              <FlightCart flight={flight} key={Math.random()} />
+              <PreFlightCard flight={flight} key={Math.random()} />
             ))}
           </div>
         </div>
