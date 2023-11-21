@@ -14,18 +14,27 @@ import {
   FaVoicemail,
   FaYoutube,
 } from "react-icons/fa";
+import { SlMenu } from "react-icons/sl";
 import { SiAparat } from "react-icons/si";
 import { GoPersonFill } from "react-icons/go";
+import HiddenMenu from "../Ui/hiddenMenu";
 export default function Header() {
   const [connection, setConnection] = useState(false);
   const [menu, setMenu] = useState(false);
   const [detailRoles, setDetaiRoles] = useState(false);
+  const [showIconMobile, setShowIconMobile] = useState(false);
   const roleRef = useRef();
   const tabConnectRef = useRef();
   const connectionRef = useRef();
   const tabMenuRef = useRef();
   const menuRef = useRef();
   const listRef = useRef();
+
+  if(showIconMobile === true){
+    document.body.classList.add("no-scroll");
+  }else{
+    document.body.classList.remove("no-scroll");
+  }
 
   window.addEventListener("click", (e) => {
     if (
@@ -46,8 +55,18 @@ export default function Header() {
   });
   return (
     <header className="relative">
-      <nav className="flex h-9 items-center justify-between bg-primary px-32 ">
+      <HiddenMenu
+        showIconMobile={showIconMobile}
+        setShowIconMobile={setShowIconMobile}
+      />
+      <nav className="flex h-9 items-center justify-between bg-primary px-3 md:px-10 xl:px-72 ">
         <div className="flex items-center gap-5">
+          <span
+            onClick={() => setShowIconMobile(!showIconMobile)}
+            className="text-lg text-light md:hidden"
+          >
+            {!showIconMobile && <SlMenu />}
+          </span>
           <div className="relative">
             <button
               onClick={() => {
@@ -72,7 +91,7 @@ export default function Header() {
 
             <div
               ref={connectionRef}
-              className={`absolute right-0 ${
+              className={`absolute -right-14 md:right-0 ${
                 connection
                   ? "pointer-events-auto z-50 translate-y-1.5 opacity-100"
                   : "pointer-events-none -z-10 translate-y-10 opacity-0"
@@ -119,13 +138,13 @@ export default function Header() {
                   <FaYoutube className="text-xl text-darkestBlue  transition-all duration-200" />
                 </li>
               </ul>
-              <span className="absolute -top-2.5 right-9 z-10 text-xs text-white">
+              <span className="absolute -top-2.5 right-20 md:right-9 z-10 text-xs text-white">
                 <BsTriangleFill />
               </span>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative hidden md:block">
             <button
               onClick={() => {
                 if (menu === false) {
@@ -237,7 +256,11 @@ export default function Header() {
               </span>
             </div>
           </div>
-          <a href="#weblog" className="flex items-center gap-1 text-light">
+
+          <a
+            href="#weblog"
+            className="hidden items-center gap-1 text-light md:flex"
+          >
             وبلاگ
             <FaAngleDown className="text-xs" />
           </a>

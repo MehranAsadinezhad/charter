@@ -3,7 +3,7 @@ import React from "react";
 export default function Guidence() {
   return (
     <div>
-      <h1 className="mb-1 text-sm font-semibold text-darkGray">
+      <h1 className="mb-1  text-sm font-semibold text-darkGray">
         راهنمای سفر چارتر 118
       </h1>
       <div className="borderThin mb-3"></div>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Card({ option }) {
   return (
-    <div className="shadow-box w-64 bg-white p-1">
+    <div className="shadow-box md:col-span-3 sm:col-span-4 col-span-6 bg-white p-1">
       <div className="box-bg relative w-full">
         <img
           className="left relative h-[75px] object-fill object-center"

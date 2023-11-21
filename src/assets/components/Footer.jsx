@@ -22,7 +22,7 @@ import saman from "../../../public/images/samandeh.png";
 export default function Footer() {
   return (
     <footer className="relative h-[600px] w-screen overflow-hidden bg-darkPrimary">
-      <div className="rotate absolute right-0 z-50 block w-[1600px] overflow-hidden text-center 2xl:w-full">
+      <div className="rotate hidden lg:block absolute right-0 z-50 w-[1600px] overflow-hidden text-center 2xl:w-full">
         <svg
           width="1998"
           height="109"
@@ -52,11 +52,11 @@ export default function Footer() {
           ></path>
         </svg>
       </div>
-      <div className="absolute top-40 w-full px-[130px]">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-x-8">
+      <div className="absolute lg:mt-36 mt-10 w-full px-20 xl:px-[130px]">
+        <div className="flex lg:flex-row flex-col items-center justify-between">
+          <div className="flex lg:flex-row flex-col items-center gap-x-8">
             <img src={logo} alt="logoWhite"></img>
-            <ul className="mt-3 flex items-center gap-1">
+            <ul className="my-3 flex items-center lg:gap-1 gap-3">
               <li className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full transition-all duration-200 hover:bg-secondary">
                 <FaTelegramPlane className="text-2xl text-light transition-all duration-200" />
               </li>
@@ -84,9 +84,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="my-5 border-b-2 border-darkestPrimary"></div>
-        <div className="grid grid-cols-4">
-          <div className="col-span-1">
-            <h1 className="text-center text-lg text-light">ارتباط با ما</h1>
+        <div className="grid lg:grid-cols-4">
+          <div className="lg:col-span-1">
+            <h1 className="text-center text-lg bg-darkestPrimary text-light">ارتباط با ما</h1>
             <ul className="mt-5 flex flex-col gap-2">
               <li className="flex flex-col text-sm text-light">
                 <div className="flex gap-1">
@@ -122,7 +122,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-span-1">
+          <div className="lg:col-span-1">
             <h1 className="text-center text-lg text-light">دسترسی سریع</h1>
             <ul className="unorderFooter mt-5 flex flex-col text-sm leading-7">
               <li>
@@ -162,7 +162,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-span-2">
+          <div className="lg:col-span-2">
             <h1 className="text-center text-lg text-light">مجوزها و نمادها</h1>
             <div className="mt-5 grid grid-cols-5 items-center gap-3">
               <img

@@ -12,7 +12,7 @@ export default function Guide() {
     <div className="bg-white pb-24 pt-14">
       <div
         id="weblog"
-        className={`grid grid-cols-5 gap-x-3 gap-y-8 overflow-hidden px-3 ${
+        className={`grid lg:grid-cols-5 sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8 overflow-hidden px-3 ${
           !show ? "h-[200px]" : ""
         }`}
       >

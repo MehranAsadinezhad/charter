@@ -5,7 +5,7 @@ import hotel from "../../../public/images/hotel.jpg";
 
 export default function Advertise() {
   return (
-    <div className=" my-16 overflow-hidden w-screen px-32 2xl:px-80 justify-center flex flex-col gap-10 ">
+    <div className=" my-16 overflow-hidden w-screen px-8 lg:px-32 2xl:px-80 justify-center flex flex-col gap-10 ">
       <div className="cursor-pointer col-span-2 w-full">
         <img
           className="rounded-md w-full"

@@ -21,13 +21,13 @@ export default function CharterFlight() {
     { id: 8, name: "اهواز", poster: ahv },
   ];
   return (
-    <section className="mt-24 ">
+    <section className="md:mt-24 mt-40 ">
       <div className="text-center">
         <h1 className="text-darkGray inline-block border-b-2 border-primary text-xl font-bold">
           بلیط چارتر
         </h1>
       </div>
-      <div className="mx-32 my-5 grid grid-cols-4 gap-6 2xl:mx-64">
+      <div className="xl:px-32 md:px-10 px-5 lg:px-24 my-5 grid place-items-center grid-cols-12 gap-5 2xl:px-64">
         {options.map((city) => (
           <Card key={city.id} option={city} />
         ))}

@@ -8,33 +8,35 @@ import logo from "../../../public/images/logo.jpg";
 
 export default function SecondNav() {
   return (
-    <div className="flex items-center justify-between bg-white px-32">
+    <div className="flex items-center justify-between bg-white px-10 xl:px-72 ">
       <div>
-        <img src={logo} alt="logo" className="cursor-pointer"></img>
+        <img src={logo} alt="logo" className="cursor-pointer w-20 lg:w-full"></img>
       </div>
       <div>
         <ul className="flex items-center">
           <li className="flex cursor-pointer items-center gap-2">
             <BiHotel className="text-2xl text-gray-500" />
-            <span className="tex text-sky-500">هتل</span>
+            <span className="hidden text-sky-500 lg:block">هتل</span>
           </li>
           <li className="flex cursor-pointer items-center gap-2 before:mr-1 before:text-xl before:text-gray-300 before:content-['|']">
             <BsPerson className="text-2xl text-gray-500" />
-            <span className="text-skyDark tex">
+            <span className="hidden text-skyDark lg:block">
               جدول جریمه پرواز سیستمی داخلی
             </span>
           </li>
           <li className="flex cursor-pointer items-center gap-2 before:mr-1 before:text-xl before:text-gray-300 before:content-['|']">
             <HiOutlineBuildingOffice2 className="text-2xl text-gray-500" />
             <div className="flex items-center gap-2">
-              <p className="text-skyDark tex">تور داخلی و خارجی</p>
+              <p className="hidden text-skyDark lg:block">تور داخلی و خارجی</p>
               <FaAngleDown className="text-xs text-gray-500 transition-all duration-200" />
             </div>
           </li>
           <li className="flex cursor-pointer items-center gap-2 before:mr-1 before:text-xl before:text-gray-300 before:content-['|']">
             <SlPlane className="text-2xl text-gray-500" />
             <div className="flex items-center gap-2">
-              <p className="tex text-skyDark">اپلیکیشن و ساین همکاری</p>
+              <p className=" hidden text-skyDark lg:block">
+                اپلیکیشن و ساین همکاری
+              </p>
               <FaAngleDown className="text-xs text-gray-500 transition-all duration-200" />
             </div>
           </li>

@@ -12,7 +12,7 @@ export default function PurchaseTicket() {
         </h1>
       </div>
       <div
-        className={`mx-40 mt-8 ${
+        className={`lg:mx-40 mx-10 mt-8 ${
           !show ? "h-[450px]" : ""
         } overflow-hidden scroll-smooth rounded-md bg-white transition-all duration-200`}
       >
@@ -176,7 +176,7 @@ export default function PurchaseTicket() {
           </ul>
         </div>
       </div>
-      <div className="bg-gray-50 z-20 mx-40 flex h-20 items-end justify-center">
+      <div className="bg-gray-50 z-20 mx-10 lg:mx-40 flex h-20 items-end justify-center">
         <button
           onClick={() => {
             if (show) {

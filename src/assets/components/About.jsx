@@ -4,8 +4,8 @@ import AutomaticList from "../Ui/AutomaticList";
 export default function About() {
   return (
     <>
-      <div className="bg-about relative mt-24 flex h-[600px] w-screen flex-col justify-center overflow-hidden">
-        <div className="rotate absolute right-0 top-0 z-50 block w-[1600px] overflow-hidden text-center 2xl:w-full">
+      <div className="bg-about relative mt-24 h-[350px] flex lg:h-[600px] w-screen flex-col justify-center overflow-hidden">
+        <div className="rotate absolute hidden lg:block right-0 top-0 z-50 w-[1600px] overflow-hidden text-center 2xl:w-full">
           <svg
             width="1998"
             height="109"
@@ -36,7 +36,7 @@ export default function About() {
             ></path>
           </svg>
         </div>
-        <div className="grid grid-cols-3 2xl:px-[320px] px-[120px]">
+        <div className="grid lg:grid-cols-3 grid-col-12 2xl:px-[320px] px-14 lg:px-[120px]">
           <div className="col-span-2">
             <p className="mb-5 text-sm text-light">درباره ما</p>
             <p className="text-sm leading-8 text-light">
@@ -56,14 +56,14 @@ export default function About() {
               </button>
             </div>
           </div>
-          <div className="mr-20">
+          <div className="mr-20 hidden lg:block">
             <p className="mb-5 text-sm text-light">اطلاعیه های سایت</p>
             <div className="relative h-[160px] overflow-hidden">
               <AutomaticList />
             </div>
           </div>
         </div>
-        <div className="rotate-180 absolute right-0 bottom-0 z-50 block w-[1600px] overflow-hidden text-center 2xl:w-full">
+        <div className="rotate-180 hidden lg:block absolute right-0 bottom-0 z-50 w-[1600px] overflow-hidden text-center 2xl:w-full">
           <svg
             width="1998"
             height="109"

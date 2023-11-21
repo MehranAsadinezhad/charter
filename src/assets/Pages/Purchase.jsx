@@ -53,7 +53,7 @@ export default function Purchase() {
       {loading && <Loader />}
       <div className="flex flex-col items-center gap-5 px-32 2xl:px-72 ">
         {/* last template */}
-        {/* <div className="my-10 flex h-[220px] w-full justify-between rounded-lg bg-white ring-1 ring-gray-300">
+        <div className="my-10 flex h-[220px] w-full justify-between rounded-lg bg-white ring-1 ring-gray-300">
           <div className="flex flex-col gap-3 p-3 px-6">
             <div className="flex items-center gap-3">
               <p className="rounded-full bg-purple-100 px-4 py-1 text-sm text-primary">
@@ -156,9 +156,9 @@ export default function Purchase() {
               + اصافه کردن مسافر جدید
             </button>
           </div>
-        </div> */}
+        </div>
 
-        <div className="popup inset-0 my-24 grid w-[1150px] grid-cols-12 gap-5 rounded-lg p-7 backdrop-brightness-50">
+        <div className="popup inset-0 my-40 grid w-[1150px] grid-cols-12 gap-5 rounded-lg p-7 backdrop-brightness-50">
           <RightSideReserve todayFa={todayFa} selectedFlight={selectedFlight} />
           <LeftSideReserve selectedFlight={selectedFlight} />
         </div>
