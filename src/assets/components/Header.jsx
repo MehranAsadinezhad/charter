@@ -23,8 +23,9 @@ export default function Header() {
   const roleRef = useRef();
   const tabConnectRef = useRef();
   const connectionRef = useRef();
-  const tabUserRef = useRef();
-  const userRef = useRef();
+  const tabMenuRef = useRef();
+  const menuRef = useRef();
+  const listRef = useRef();
 
   window.addEventListener("click", (e) => {
     if (
@@ -33,11 +34,13 @@ export default function Header() {
     ) {
       setConnection(false);
     }
-    else if (
-      e.target !== tabUserRef.current &&
-      e.target !== userRef.current &&
-      e.target !== roleRef.current
+    if (
+      e.target !== menuRef.current &&
+      e.target !== tabMenuRef.current &&
+      e.target !== roleRef.current &&
+      e.target !== listRef.current
     ) {
+      console.log("outside");
       setMenu(false);
     }
   });
@@ -122,7 +125,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="relative" ref={tabUserRef}>
+          <div className="relative">
             <button
               onClick={() => {
                 if (menu === false) {
@@ -131,7 +134,7 @@ export default function Header() {
                   setMenu(false);
                 }
               }}
-         
+              ref={tabMenuRef}
               className={`flex items-center gap-1 text-light ${
                 menu ? "text-secondary" : ""
               }`}
@@ -144,7 +147,7 @@ export default function Header() {
               />
             </button>
             <div
-              ref={userRef}
+              ref={menuRef}
               className={`${
                 menu
                   ? "pointer-events-auto z-50 translate-y-1.5 opacity-100"
@@ -166,7 +169,10 @@ export default function Header() {
                 </div>
                 <p className="cursor-pointer text-graay">فارسی</p>
               </div>
-              <ul className="flex flex-col p-4 pb-2 text-sm text-gray-500">
+              <ul
+                ref={listRef}
+                className="flex flex-col p-4 pb-2 text-sm text-gray-500"
+              >
                 <li className="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-all duration-500 hover:bg-graay">
                   <FaHome className="text-xl" />
                   <p>صفحه اصلی</p>
@@ -198,15 +204,15 @@ export default function Header() {
                   ref={roleRef}
                   className="flex cursor-pointer items-center rounded-md p-3 transition-all duration-500 hover:bg-graay"
                 >
-                  <div className="flex w-full items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <FaHome className="text-xl" />
+                  <div className="pointer-events-none flex w-full items-center justify-between">
+                    <div className="pointer-events-none flex items-center gap-4">
+                      <FaHome className="pointer-events-none text-xl" />
                       <p>قوانین</p>
                     </div>
                     <FaAngleDown
                       className={`${
                         detailRoles ? "rotate-180" : ""
-                      } transition-all duration-300`}
+                      } pointer-events-none transition-all duration-300`}
                     />
                   </div>
                 </li>
