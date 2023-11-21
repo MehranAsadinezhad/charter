@@ -21,7 +21,7 @@ import saman from "../../../public/images/samandeh.png";
 
 export default function Footer() {
   return (
-    <footer className="relative lg:h-[600px] md:h-[1300px] sm:h-[1450px] h-[1650px] w-screen overflow-hidden bg-darkPrimary">
+    <footer className="relative lg:h-[600px] md:h-[1300px] sm:h-[1450px] h-[1700px] w-screen overflow-hidden bg-darkPrimary">
       <div className="rotate hidden lg:block absolute right-0 z-50 w-[1600px] overflow-hidden text-center 2xl:w-full">
         <svg
           width="1998"
@@ -77,10 +77,10 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="flex items-center gap-2">
-            <img alt="sib" className="w-28 cursor-pointer" src={sib}></img>
-            <img alt="bazar" className="w-40 cursor-pointer" src={bazar}></img>
-            <img alt="gp" className="w-40 cursor-pointer" src={gp}></img>
+          <div className="flex items-center gap-2 flex-wrap">
+            <img alt="sib" className="md:w-28 w-24 cursor-pointer" src={sib}></img>
+            <img alt="bazar" className="md:w-40 w-32 cursor-pointer" src={bazar}></img>
+            <img alt="gp" className="md:w-40 w-32 cursor-pointer" src={gp}></img>
           </div>
         </div>
         <div className="my-5 border-b-2 border-darkestPrimary"></div>
