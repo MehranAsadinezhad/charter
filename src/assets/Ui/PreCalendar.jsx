@@ -49,6 +49,7 @@ export default function PreCalendar() {
   const { searchFlight, availFlights } = useContext(FlightContext);
   const [closeCal, setCloseCal] = useState(false);
   const [intCal, setIntCal] = useState(false);
+
   console.log(availFlights);
   return (
     // <!-- Modal toggle -->

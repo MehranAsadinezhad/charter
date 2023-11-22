@@ -20,16 +20,16 @@ import { LeftSideReserve } from "../Ui/LeftSideReserve.jsx";
 
 export default function Purchase() {
   const { selectedFlight, loading } = useContext(FlightContext);
-  const [formId, setFormId] = useState([0]);
+  // const [formId, setFormId] = useState([0]);
 
-  function addForm() {
-    const newFormId = formId[formId.length - 1] + 1;
-    setFormId([...formId, newFormId]);
-  }
+  // function addForm() {
+  //   const newFormId = formId[formId.length - 1] + 1;
+  //   setFormId([...formId, newFormId]);
+  // }
 
   console.log(selectedFlight);
-  const navigate = useNavigate();
 
+  // changeable dates
   const todayFa = {
     day: getDateFormat(new Date(selectedFlight?.departureDate), {
       day: "2-digit",
@@ -51,8 +51,8 @@ export default function Purchase() {
   return (
     <>
       {loading && <Loader />}
-      <div className="flex flex-col items-center gap-5 px-32 2xl:px-72 ">
-        {/* last template */}
+      {/* alibaba reserve style  */}
+      {/* <div className="flex flex-col items-center gap-5">
         <div className="my-10 flex h-[220px] w-full justify-between rounded-lg bg-white ring-1 ring-gray-300">
           <div className="flex flex-col gap-3 p-3 px-6">
             <div className="flex items-center gap-3">
@@ -157,11 +157,12 @@ export default function Purchase() {
             </button>
           </div>
         </div>
+      </div> */}
 
-        <div className="popup inset-0 my-40 grid w-[1150px] grid-cols-12 gap-5 rounded-lg p-7 backdrop-brightness-50">
-          <RightSideReserve todayFa={todayFa} selectedFlight={selectedFlight} />
-          <LeftSideReserve selectedFlight={selectedFlight} />
-        </div>
+      {/* charter118 reserve style */}
+      <div className="popup grid grid-cols-12 min-h-[100vh] gap-5 p-7">
+        <RightSideReserve todayFa={todayFa} selectedFlight={selectedFlight} />
+        <LeftSideReserve selectedFlight={selectedFlight} />
       </div>
     </>
   );

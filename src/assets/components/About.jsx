@@ -5,6 +5,7 @@ export default function About() {
   return (
     <>
       <div className="bg-about relative mt-24 h-[350px] flex lg:h-[600px] w-screen flex-col justify-center overflow-hidden">
+        {/* first wave */}
         <div className="rotate absolute hidden lg:block right-0 top-0 z-40 w-[1600px] overflow-hidden text-center 2xl:w-full">
           <svg
             width="1998"
@@ -36,6 +37,7 @@ export default function About() {
             ></path>
           </svg>
         </div>
+        {/* main */}
         <div className="grid lg:grid-cols-3 grid-col-12 2xl:px-[320px] px-14 lg:px-[120px]">
           <div className="col-span-2">
             <p className="mb-5 text-sm text-light">درباره ما</p>
@@ -63,6 +65,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        {/* last wave */}
         <div className="rotate-180 hidden lg:block absolute right-0 bottom-0 z-40 w-[1600px] overflow-hidden text-center 2xl:w-full">
           <svg
             width="1998"

@@ -1,12 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 import { CiSquarePlus, CiCirclePlus } from "react-icons/ci";
 import { IoPersonSharp } from "react-icons/io5";
 import { separate } from "../utils/helpers";
 import logo from "../../../public/images/logo.jpg";
 
-export function LeftSideReserve({ selectedFlight }) {
+export function LeftSideReserve({ selectedFlight}) {
+  const [formId,setFormId] = useState([0])
+  // add passenger
+  function addForm() {
+    const newFormId = formId[formId.length - 1] + 1;
+    setFormId([...formId, newFormId]);
+  }
   return (
-    <div className="col-span-9 flex flex-col">
+    <div className="col-span-10 flex flex-col">
       <div className="flex items-center gap-10">
         <button className="rounded-lg bg-sky-700 p-2 text-white">
           افزودن مسافر جدید

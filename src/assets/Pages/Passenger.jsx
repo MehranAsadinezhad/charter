@@ -1,14 +1,11 @@
-import React, { useContext } from "react";
-import FlightCart from "../Ui/FlightCart";
+import React, { useContext, useState } from "react";
 import PassengerCalendar from "../Ui/PassengerCalendar";
 import { FlightContext } from "../context/FlightContext";
-import { config } from "localforage";
 import { PiTrainFill } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import PreCalendar from "../Ui/PreCalendar";
-import Loader from "../Ui/Loader";
 import { ImHome3 } from "react-icons/im";
-import PreFlightCard from "../Ui/preFlightCard";
+import PreFlightCard from "../Ui/PreFlightCard";
 
 // const fakeFlight = {
 //   success: true,
@@ -329,12 +326,15 @@ const hugeDatas = {
 export default function Passenger() {
   const availDates = Object.entries(hugeDatas.KHD.THR.minDate);
   const extractDates = Object.keys(hugeDatas.KHD.THR.minDate);
+  // min date of hugeData
   const startDate = extractDates.reduce(function (a, b) {
     return a <= b ? a : b;
   });
+  // max date of hugeData
   const endDate = extractDates.reduce(function (a, b) {
     return a >= b ? a : b;
   });
+
   const datesArray = [];
 
   // loop from start date to end date
@@ -350,11 +350,13 @@ export default function Passenger() {
     );
   }
 
-  const { availFlights, loading } = useContext(FlightContext);
+  const { availFlights } = useContext(FlightContext);
+  const [showReserve, setShowReserve] = useState(false);
+
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="relative">
       {/* alibaba calendar */}
       <div className="my-14 grid grid-cols-4 gap-x-5 px-28 2xl:px-80">
         <div className="col-span-1 h-[550px] rounded-lg bg-white ring-1 ring-gray-300"></div>
@@ -402,6 +404,7 @@ export default function Passenger() {
             <button className="rounded-lg bg-white p-2  text-primary transition-all duration-200 hover:bg-purple-100">
               روز بعد
             </button>
+            {/* charter118 calendar */}
             <PreCalendar />
           </div>
 
@@ -441,13 +444,20 @@ export default function Passenger() {
             </button>
           </div>
 
+          {/* charter118 flight card */}
           <div className="flex flex-col gap-5">
             {availFlights?.flights?.map((flight) => (
-              <PreFlightCard flight={flight} key={Math.random()} />
+              <PreFlightCard
+                showReserve={showReserve}
+                setShowReserve={setShowReserve}
+                flight={flight}
+                key={Math.random()}
+              />
             ))}
           </div>
         </div>
       </div>
-    </>
+   
+    </div>
   );
 }

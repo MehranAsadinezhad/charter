@@ -11,6 +11,7 @@ export default function Intro() {
           alt="flight"
           className="h-[380px] w-full object-cover object-top"
         ></img>
+        {/* waves */}
         <div className="absolute bottom-1 h-[150px] w-full">
           <svg
             viewBox="0 0 500 150"

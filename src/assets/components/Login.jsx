@@ -2,20 +2,10 @@ import React from "react";
 import { MdOutlineLogin } from "react-icons/md";
 import { FaXmark } from "react-icons/fa6";
 
-export default function Login({ setShowLogin, showLogin }) {
-  // if (showLogin) {
-  //   document.body.classList.add("no-scroll");
-  // } else {
-  //   document.body.classList.remove("no-scroll");
-  // }
-  // useEffect(()=>{
-  //   document.body.classList.add("no-scroll")
-  //   return ()=>document.body.classList.remove("no-scroll")
-  // },[])
-
+export default function Login({ setShowLogin }) {
   return (
-    <div className="absolute inset-0 overflow-y-hidden z-50 flex h-[100vh] w-full items-center justify-center backdrop-brightness-50">
-      <div className="popup relative flex w-1/5 flex-col rounded-lg px-3 py-8 text-sm shadow-2xl">
+    <div className="absolute inset-0 z-50 flex h-[100vh] w-full items-center justify-center overflow-y-hidden backdrop-brightness-50">
+      <form className="popup relative flex w-1/5 flex-col rounded-lg px-3 py-8 text-sm shadow-2xl">
         <button
           onClick={() => setShowLogin(false)}
           className="absolute -left-3 -top-3 rounded-full bg-graay p-1 text-2xl text-darkestPrimary"
@@ -30,7 +20,7 @@ export default function Login({ setShowLogin, showLogin }) {
           <label className="text-light">نام کاربری</label>
           <input
             type="text"
-            className="h-8 transition-all duration-200 focus:ring-2 focus:ring-secondary rounded-md p-1 outline-none"
+            className="h-8 rounded-md p-1 outline-none transition-all duration-200 focus:ring-2 focus:ring-secondary"
             name="name"
             id="name"
           />
@@ -39,16 +29,18 @@ export default function Login({ setShowLogin, showLogin }) {
           <label className="text-light">رمز ورود</label>
           <input
             type="password"
-            className="h-8 transition-all duration-200 focus:ring-2 focus:ring-secondary rounded-md p-1 outline-none"
+            className="h-8 rounded-md p-1 outline-none transition-all duration-200 focus:ring-2 focus:ring-secondary"
             name="pass"
             id="pass"
           />
         </div>
-        <p className="my-3 self-start cursor-pointer text-light">بازیابی رمز ورود</p>
+        <p className="my-3 cursor-pointer self-start text-light">
+          بازیابی رمز ورود
+        </p>
         <button className="self-end rounded-md bg-primary px-8 py-2 text-white">
           ورود
         </button>
-      </div>
+      </form>
     </div>
   );
 }

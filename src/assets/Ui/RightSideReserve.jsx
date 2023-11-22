@@ -11,7 +11,7 @@ import React from "react";
 
 export function RightSideReserve({selectedFlight,todayFa}) {
     return (
-        <div className="text-white col-span-3 rounded-md border-4 border-white text-sm">
+        <div className="text-white col-span-2 rounded-md border-4 border-white text-sm">
             <div className="flex bg-primary text-white items-center justify-between p-2">
                 <h1>اطلاعات پرواز</h1>
                 <LuPlane className="text-xl"/>
@@ -63,9 +63,9 @@ export function RightSideReserve({selectedFlight,todayFa}) {
                 <li className="flex items-center justify-between gap-2 border-b-2 border-white py-2">
                     <div className="flex items-center gap-2">
                         <SiCriticalrole className="text-lg font-bold"/>
-                        <a>قوانین کنسلی</a>
+                        <a href="#">قوانین کنسلی</a>
                     </div>
-                    <a>کلیک کنید</a>
+                    <a href="#">کلیک کنید</a>
                 </li>
                 <li className="flex items-center gap-2 border-b-2 border-white py-2">
                     <MdPhone className="text-lg font-bold"/>

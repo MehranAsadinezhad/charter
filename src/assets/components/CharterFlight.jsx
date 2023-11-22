@@ -10,6 +10,7 @@ import esf from "../../../public/images/esf.jpg";
 import Card from "../Ui/Card";
 
 export default function CharterFlight() {
+  // fake data to render some Card
   const options = [
     { id: 1, name: "تهران", poster: teh },
     { id: 2, name: "مشهد", poster: mhd },

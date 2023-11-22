@@ -22,6 +22,7 @@ import saman from "../../../public/images/samandeh.png";
 export default function Footer() {
   return (
     <footer className="relative lg:h-[600px] md:h-[1300px] sm:h-[1450px] h-[1700px] w-screen overflow-hidden bg-darkPrimary">
+      {/* the wave f footer */}
       <div className="rotate hidden lg:block absolute right-0 z-40 w-[1600px] overflow-hidden text-center 2xl:w-full">
         <svg
           width="1998"
@@ -52,6 +53,7 @@ export default function Footer() {
           ></path>
         </svg>
       </div>
+      {/* main */}
       <div className="absolute lg:mt-36 mt-10 w-full px-5 xl:px-[130px]">
         <div className="flex lg:flex-row flex-col items-center justify-between">
           <div className="flex lg:flex-row flex-col items-center gap-x-8">

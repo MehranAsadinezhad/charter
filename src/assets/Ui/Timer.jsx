@@ -18,13 +18,17 @@ export default function Timer() {
     navigate('/passenger')
   }
   return (
-    <div className="relative flex flex-row-reverse rounded-lg items-center justify-center gap-1 bg-gray-100 p-2 font-iranBold text-primary">
+    <div className="relative flex flex-row-reverse text-lg rounded-lg items-center justify-center gap-1 bg-gray-100 px-5 py-2 font-iranBold text-primary">
+      {/* with daisy library */}
+      
       {/* <span className="countdown">
         <span style={{ "--value": min }}></span>
       </span>:
       <span className="countdown">
         <span style={{ "--value": sec }}></span>
       </span> */}
+
+      {/* without style library */}
       <span>{min < 10 ? `0${min}` : min}</span>:<span>{sec < 10 ? `0${sec}` : sec}</span>
     </div>
   );
