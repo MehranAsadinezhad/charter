@@ -65,9 +65,9 @@ export default function SearchBar() {
             },
           },
           error: {
-            duration: 3000,
+            duration: 4000,
             style: {
-              backgroundColor: "red",
+              backgroundColor: "#dc2626",
               color: "white",
               minWidth: "390px",
             },

@@ -39,7 +39,7 @@ export default function About() {
         <div className="grid lg:grid-cols-3 grid-col-12 2xl:px-[320px] px-14 lg:px-[120px]">
           <div className="col-span-2">
             <p className="mb-5 text-sm text-light">درباره ما</p>
-            <p className="text-sm leading-8 text-light sm:h-auto h-40 overflow-y-scroll">
+            <p className="text-sm leading-8 text-light sm:h-auto h-40 sm:overflow-hidden overflow-y-scroll">
               بلیط چارتر هواپیما خود را از ما بخواهید. چارتر 118 (charter118) با
               بیش یک دهه تجربه در فروش انواع بلیط هواپیما از جمله چارتری و
               سیستمی توانسته رضایت مشتریان خود را جلب کند. ما در مجموعه چارتر

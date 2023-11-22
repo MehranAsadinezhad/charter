@@ -18,11 +18,17 @@ import { SlMenu } from "react-icons/sl";
 import { SiAparat } from "react-icons/si";
 import { GoPersonFill } from "react-icons/go";
 import HiddenMenu from "../Ui/hiddenMenu";
+import Login from "./Login";
+import Logup from "./Logup";
 export default function Header() {
   const [connection, setConnection] = useState(false);
   const [menu, setMenu] = useState(false);
   const [detailRoles, setDetaiRoles] = useState(false);
   const [showIconMobile, setShowIconMobile] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showLogUp, setShowLogUp] = useState(false);
+  const [showPersuit, setShowPersuit] = useState(false);
+  
   const roleRef = useRef();
   const tabConnectRef = useRef();
   const connectionRef = useRef();
@@ -30,9 +36,9 @@ export default function Header() {
   const menuRef = useRef();
   const listRef = useRef();
 
-  if(showIconMobile === true){
+  if (showIconMobile === true) {
     document.body.classList.add("no-scroll");
-  }else{
+  } else {
     document.body.classList.remove("no-scroll");
   }
 
@@ -138,7 +144,7 @@ export default function Header() {
                   <FaYoutube className="text-xl text-darkestBlue  transition-all duration-200" />
                 </li>
               </ul>
-              <span className="absolute -top-2.5 right-20 md:right-9 z-10 text-xs text-white">
+              <span className="absolute -top-2.5 right-20 z-10 text-xs text-white md:right-9">
                 <BsTriangleFill />
               </span>
             </div>
@@ -178,13 +184,21 @@ export default function Header() {
                   <GoPersonFill className="text-3xl text-light" />
                 </div>
                 <div className="flex items-center gap-5">
-                  <a href="c" className="text-gray-300 hover:text-graay">
+                  <p
+                    onClick={() => {
+                      setShowLogin(true);
+                    }}
+                    className="cursor-pointer text-gray-300 hover:text-graay"
+                  >
                     ورود
-                  </a>
+                  </p>
                   <span className="text-sm text-gray-400">|</span>
-                  <a href="d" className="text-gray-300 hover:text-graay">
+                  <p
+                    onClick={() => setShowLogUp(true)}
+                    className="cursor-pointer text-gray-300 hover:text-graay"
+                  >
                     ثبت نام
-                  </a>
+                  </p>
                 </div>
                 <p className="cursor-pointer text-graay">فارسی</p>
               </div>
@@ -196,7 +210,10 @@ export default function Header() {
                   <FaHome className="text-xl" />
                   <p>صفحه اصلی</p>
                 </li>
-                <li className="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-all duration-500 hover:bg-graay">
+                <li
+                  onClick={() => setShowPersuit(true)}
+                  className="flex cursor-pointer items-center gap-4 rounded-md p-3 transition-all duration-500 hover:bg-graay"
+                >
                   <FaHome className="text-xl" />
                   <p>پیگیری بلیط</p>
                 </li>
@@ -271,6 +288,8 @@ export default function Header() {
         </div>
       </nav>
       <SecondNav />
+      {showLogin && <Login showLogin={showLogin} setShowLogin={setShowLogin} />}
+      {showLogUp && <Logup showLogUp={showLogUp} setShowLogUp={setShowLogUp} />}
     </header>
   );
 }

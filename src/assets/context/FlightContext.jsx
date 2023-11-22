@@ -7,7 +7,7 @@ export default function FlightProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [searchFlight, setSearchFlight] = useState();
   const [selectedFlight, setSelectedFlight] = useState(null);
-  
+
 
   if (loading) {
     document.body.classList.add("no-scroll");
@@ -26,6 +26,12 @@ export default function FlightProvider({ children }) {
         setSelectedFlight,
         setSearchFlight,
         searchFlight,
+        // showLogUp,
+        // setShowLogUp,
+        // showLogin,
+        // setShowLogin,
+        // setShowPersuit,
+        // showPersuit,
       }}
     >
       {children}
