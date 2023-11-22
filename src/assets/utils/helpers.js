@@ -1,3 +1,4 @@
+// separate each number from price
 export function separate(Number) {
   Number += "";
   Number = Number.replace(",", "");
@@ -10,6 +11,7 @@ export function separate(Number) {
   return y + z;
 }
 
+  
   // const todayFa = {
   //   day: getDateFormat(new Date(date), { day: "2-digit" }),
   //   month: getDateFormat(new Date(date), { month: "numeric" }),
@@ -18,6 +20,7 @@ export function separate(Number) {
   //   dayWeek: getDateFormat(new Date(date), { weekday: "long" }),
   // };
 
+// change calendar to int or sha
 export function getDateFormat(uDate,option){
   let date = new Intl.DateTimeFormat('fa-IR', option).format(uDate);
   return date;
