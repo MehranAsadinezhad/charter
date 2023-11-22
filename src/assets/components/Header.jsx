@@ -28,7 +28,7 @@ export default function Header() {
   const [showLogin, setShowLogin] = useState(false);
   const [showLogUp, setShowLogUp] = useState(false);
   const [showPersuit, setShowPersuit] = useState(false);
-  
+
   const roleRef = useRef();
   const tabConnectRef = useRef();
   const connectionRef = useRef();
@@ -55,7 +55,6 @@ export default function Header() {
       e.target !== roleRef.current &&
       e.target !== listRef.current
     ) {
-      console.log("outside");
       setMenu(false);
     }
   });
