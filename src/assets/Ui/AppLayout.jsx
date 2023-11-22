@@ -6,12 +6,14 @@ import Footer from "../components/Footer";
 import Guide from "../components/Guide";
 import Loader from "./Loader";
 import { FlightContext } from "../context/FlightContext";
+import ScrollButton from "./ScrollButton";
 
 export default function AppLayout() {
   const { loading } = useContext(FlightContext);
   return (
     <div className="overflow-hidden">
       <Header />
+      <ScrollButton/>
       <Intro />
       {loading ? (
         <Loader />

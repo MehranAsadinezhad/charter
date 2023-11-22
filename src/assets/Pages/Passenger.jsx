@@ -355,6 +355,7 @@ export default function Passenger() {
 
   return (
     <>
+      {/* alibaba calendar */}
       <div className="my-14 grid grid-cols-4 gap-x-5 px-28 2xl:px-80">
         <div className="col-span-1 h-[550px] rounded-lg bg-white ring-1 ring-gray-300"></div>
         <div className="col-span-3">
@@ -404,16 +405,37 @@ export default function Passenger() {
             <PreCalendar />
           </div>
 
-          <div className="my-5 flex items-center gap-5">
-            <button className="flex items-center gap-2 rounded-t-lg px-2 bg-gray-400 p-1 text-white transition-all duration-200 focus:bg-secondary focus:text-primary">
+          <div className="passenger-filter my-5 flex items-center gap-5">
+            <button
+              onClick={() =>
+                document
+                  .querySelector("button.active")
+                  .classList.remove("active")
+              }
+              className="active flex items-center gap-2 rounded-t-lg bg-gray-400 p-1 px-2 text-white transition-all duration-200 focus:bg-secondary focus:text-primary"
+            >
               <ImHome3 />
               قیمت
             </button>
-            <button className="flex items-center gap-2 rounded-t-lg px-2 bg-gray-400 p-1 text-white transition-all duration-200 focus:bg-secondary focus:text-primary">
+            <button
+              onClick={() =>
+                document
+                  .querySelector("button.active")
+                  .classList.remove("active")
+              }
+              className="flex items-center gap-2 rounded-t-lg bg-gray-400 p-1 px-2 text-white transition-all duration-200 focus:bg-secondary focus:text-primary"
+            >
               <ImHome3 />
               زمان
             </button>
-            <button className="flex items-center gap-2 rounded-t-lg px-2 bg-gray-400 p-1 text-white transition-all duration-200 focus:bg-secondary focus:text-primary">
+            <button
+              onClick={() =>
+                document
+                  .querySelector("button.active")
+                  .classList.remove("active")
+              }
+              className="flex items-center gap-2 rounded-t-lg bg-gray-400 p-1 px-2 text-white transition-all duration-200 focus:bg-secondary focus:text-primary"
+            >
               <PiTrainFill className="text-xl" />
               قطار
             </button>

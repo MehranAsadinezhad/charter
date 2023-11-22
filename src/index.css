@@ -207,4 +207,9 @@ body {
   .modal-box{
     @apply max-w-[600px]
   }
+
+  .passenger-filter>button.active{
+    background-color: #ffa903;
+    color: #a02777;
+  }
 }

@@ -5,7 +5,7 @@ export default function About() {
   return (
     <>
       <div className="bg-about relative mt-24 h-[350px] flex lg:h-[600px] w-screen flex-col justify-center overflow-hidden">
-        <div className="rotate absolute hidden lg:block right-0 top-0 z-50 w-[1600px] overflow-hidden text-center 2xl:w-full">
+        <div className="rotate absolute hidden lg:block right-0 top-0 z-40 w-[1600px] overflow-hidden text-center 2xl:w-full">
           <svg
             width="1998"
             height="109"
@@ -39,7 +39,7 @@ export default function About() {
         <div className="grid lg:grid-cols-3 grid-col-12 2xl:px-[320px] px-14 lg:px-[120px]">
           <div className="col-span-2">
             <p className="mb-5 text-sm text-light">درباره ما</p>
-            <p className="text-sm leading-8 text-light">
+            <p className="text-sm leading-8 text-light sm:h-auto h-40 overflow-y-scroll">
               بلیط چارتر هواپیما خود را از ما بخواهید. چارتر 118 (charter118) با
               بیش یک دهه تجربه در فروش انواع بلیط هواپیما از جمله چارتری و
               سیستمی توانسته رضایت مشتریان خود را جلب کند. ما در مجموعه چارتر
@@ -51,7 +51,7 @@ export default function About() {
               سفری دلنشین و خاطره انگیز همراه ما داشته باشید.
             </p>
             <div className="text-end">
-              <button className="rounded-md bg-pink px-4 py-1 text-light">
+              <button className="rounded-md sm:mt-0 mt-3 bg-pink px-4 py-1 text-light">
                 بیشتر
               </button>
             </div>
@@ -63,7 +63,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="rotate-180 hidden lg:block absolute right-0 bottom-0 z-50 w-[1600px] overflow-hidden text-center 2xl:w-full">
+        <div className="rotate-180 hidden lg:block absolute right-0 bottom-0 z-40 w-[1600px] overflow-hidden text-center 2xl:w-full">
           <svg
             width="1998"
             height="109"

@@ -13,7 +13,7 @@ export default function Advertise() {
           alt="foreignFlight"
         ></img>
       </div>
-      <div className="grid grid-cols-2 w-full items-center gap-6">
+      <div className="grid sm:grid-cols-2 w-full items-center gap-6">
         <img
           className="cursor-pointer w-full col-span-1 rounded-md"
           src={foreignHotel}

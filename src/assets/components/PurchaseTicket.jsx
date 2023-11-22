@@ -16,7 +16,7 @@ export default function PurchaseTicket() {
           !show ? "h-[450px]" : ""
         } overflow-hidden scroll-smooth rounded-md bg-white transition-all duration-200`}
       >
-        <div className="px-20 py-20">
+        <div className="md:px-20 px-3 py-20">
           <h1 className="text-skyDark text-xl font-semibold">
             بلیط چارتر هواپیما
           </h1>
@@ -31,7 +31,7 @@ export default function PurchaseTicket() {
           <div className="flex items-center justify-center">
             <img
               alt="char"
-              className="mb-5 h-[500px] w-[500px]"
+              className="mb-5 lg:h-[500px] lg:w-[500px]"
               src={charter}
             ></img>
           </div>
