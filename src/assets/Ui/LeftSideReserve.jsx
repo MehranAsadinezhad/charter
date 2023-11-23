@@ -42,53 +42,57 @@ export function LeftSideReserve({ selectedFlight }) {
   const [lastValue, setLastValue] = useState("");
   const [passengerCode, setPassengerCode] = useState("");
   const [passengerType, setPassengerType] = useState("ADL");
-  console.log(selectedFlight);
 
   const handleSubmit = () => {
     setShowLastReserve(true);
-    const passengers = [];
-    const mm = {
-      passengerType: passengerType,
-      fnamefa: "",
-      lnamefa: "",
-      fnameen: firstName,
-      lnameen: lastName,
-      gender: gender,
-      nationality: 1,
-      passengerCode: passengerCode,
-      nationalitycode: "IRI",
-      expdate: "2020-02-02",
-      birthday: "2020-02-02",
-    };
-    passengers.push(mm);
-    console.log(passengers);
-    const value = {
-      from_flight: selectedFlight?.from,
-      to_flight: selectedFlight?.to,
-      date_flight: selectedFlight.date_flight,
-      time_flight: selectedFlight.time_flight,
-      number_flight: selectedFlight.number_flight,
-      ajency_online_ID: selectedFlight.ajency_online_ID,
-      cabinclass: selectedFlight.cabinclass,
-      sellingType: selectedFlight.sellingType,
-      airline: selectedFlight.airline,
-      mobile: mobileNumber,
-      email: addEmail,
-      passengers: passengers,
-    };
-    setLastValue(value);
   };
+
+  console.log(lastValue);
+  
 
   async function handleLastSubmit(e) {
     try {
       setLoading(true);
+      const passengers = [];
+      const mm = {
+        passengerType: passengerType,
+        fnamefa: "test",
+        lnamefa: "test",
+        fnameen: firstName,
+        lnameen: lastName,
+        gender: gender,
+        nationality: 1,
+        passengerCode: passengerCode,
+        nationalitycode: "IRI",
+        expdate: "2020-02-02",
+        birthday: "2020-02-02",
+      };
+      passengers.push(mm);
+      console.log(passengers);
+      const value = {
+        from_flight: selectedFlight?.from,
+        to_flight: selectedFlight?.to,
+        date_flight: selectedFlight.date_flight,
+        time_flight: selectedFlight.time_flight,
+        number_flight: selectedFlight.number_flight,
+        ajency_online_ID: selectedFlight.ajency_online_ID,
+        cabinclass: selectedFlight.cabinclass,
+        sellingType: selectedFlight.sellingType,
+        airline: selectedFlight.airline,
+        mobile: mobileNumber,
+        email: addEmail,
+        passengers: passengers,
+      };
+   
+    
+      console.log(lastValue);
       const res = await fetch(`${myConfig.api}/Reservation`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(lastValue),
+        body: JSON.stringify(value),
       });
       const data = await res.json();
       console.log(data);
@@ -295,7 +299,10 @@ export function LeftSideReserve({ selectedFlight }) {
             <div className="flex flex-col items-center gap-3 rounded-md p-3 text-white ring-2 ring-white">
               <p>امکان پرداخت توسط کلیه کارت های شتاب</p>
               <input className="rounded-md bg-secondary"></input>
-              <button onClick={handleLastSubmit} className="rounded-md bg-secondary px-5 py-1 text-white">
+              <button
+                onClick={handleLastSubmit}
+                className="rounded-md bg-secondary px-5 py-1 text-white"
+              >
                 پرداخت
               </button>
             </div>
