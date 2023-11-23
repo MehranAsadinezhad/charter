@@ -1,7 +1,7 @@
 import React from 'react'
 
 const myConfig = 
-    {api:`http://booking.test/api/app`}
+    {api:`http://charter.test/api/Flight`}
 
 
 export {myConfig}

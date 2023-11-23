@@ -69,8 +69,8 @@ export default function PreCalendar() {
                 <div className="flex items-center gap-3">
                   <BsAirplaneFill className="text-xl text-secondary" />
                   <p className="text-light">
-                    {availFlights?.flights[0].fromFa} به{" "}
-                    {availFlights?.flights[0].toFa}
+                    {availFlights?.data[0].from} به{" "}
+                    {availFlights?.data[0].to}
                   </p>
                 </div>
                 <div>

@@ -13,7 +13,7 @@ export default function PreFlightCard({ flight, setShowReserve }) {
 
   async function handlePreReserved() {
     try {
-      setShowReserve(true);
+      // setShowReserve(true);
       setLoading(true);
       setSelectedFlight(flight);
       const value = {
@@ -42,10 +42,10 @@ export default function PreFlightCard({ flight, setShowReserve }) {
     <>
       <div className="flex h-16 items-center justify-around rounded-md bg-white p-1 transition-all duration-200 hover:bg-yellow-50">
         <p className="font-iranReg tracking-wide text-green-500">
-          {separate(flight.adultPrice)}
+          {separate(flight.price_final)}
         </p>
         <div className="flex items-center gap-1 text-darkBlue">
-          <p className="font-iranReg">{flight.departureTime}</p>
+          <p className="font-iranReg">{flight.time_flight}</p>
           <TbClockShare />
         </div>
         <div className="flex items-center gap-1 text-darkBlue">
@@ -53,8 +53,8 @@ export default function PreFlightCard({ flight, setShowReserve }) {
           <GiRockingChair />
         </div>
         <div className="flex items-center gap-2">
-          <p className="font-iranReg text-darkBlue">{flight.flightNumber}</p>
-          <img alt="logoAir" className="w-10" src={flight.airlineLogo}></img>
+          <p className="font-iranReg text-darkBlue">{flight.number_flight}</p>
+          {/* <img alt="logoAir" className="w-10" src={flight.airlineLogo}></img> */}
           <p className="rotate-90 text-sm text-darkBlue">قوانین</p>
         </div>
 

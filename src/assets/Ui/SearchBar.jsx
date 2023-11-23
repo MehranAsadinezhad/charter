@@ -21,10 +21,10 @@ export default function SearchBar() {
       const formdata = new FormData(e.target);
       console.log(formdata);
       if (
-        formdata.get("origin") === "" ||
-        formdata.get("destination") === "" ||
-        formdata.get("date") === "" ||
-        formdata.get("origin") === formdata.get("destination")
+        formdata.get("from_flight") === "" ||
+        formdata.get("to_flight") === "" ||
+        formdata.get("date_flight") === "" ||
+        formdata.get("from_flight") === formdata.get("to_flight")
       ) {
         toast.error("مبدا یا مقصد یا تاریخ وارد شده صحیح نمی باشد");
         return;
@@ -32,7 +32,7 @@ export default function SearchBar() {
       const value = Object.fromEntries(formdata);
       setSearchFlight(value);
       console.log(value);
-      const res = await fetch(`${myConfig.api}/avail`, {
+      const res = await fetch(`${myConfig.api}/Available`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,6 +43,7 @@ export default function SearchBar() {
       const data = await res.json();
       setAvailFlights(data);
       navigate("/passenger");
+      console.log(data);
       return data;
     } catch (err) {
       throw Error(err);
@@ -129,8 +130,8 @@ export default function SearchBar() {
               <select
                 style={{ WebkitAppearance: "none" }}
                 type="text"
-                name="origin"
-                id="origin"
+                name="from_flight"
+                id="from_flight"
                 className="block w-full cursor-pointer rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 placeholder="مبدا"
               >
@@ -149,8 +150,8 @@ export default function SearchBar() {
               <select
                 style={{ WebkitAppearance: "none" }}
                 type="text"
-                name="destination"
-                id="destination"
+                name="to_flight"
+                id="to_flight"
                 className="block w-full cursor-pointer rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 placeholder="مقصد"
               >
@@ -168,8 +169,8 @@ export default function SearchBar() {
             <div className="relative w-full rounded-md md:w-56">
               <input
                 type="date"
-                name="date"
-                id="date"
+                name="date_flight"
+                id="date_flight"
                 className="dateClaendar bg-white block w-full rounded-md border-0 py-3 pl-7 pr-12 text-gray-900 outline-none ring-1 ring-inset ring-gray-300 transition-all duration-150 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
                 placeholder="تاریخ رفت"
               ></input>

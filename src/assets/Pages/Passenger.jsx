@@ -351,6 +351,7 @@ export default function Passenger() {
   }
 
   const { availFlights } = useContext(FlightContext);
+  console.log(availFlights);
   const [showReserve, setShowReserve] = useState(false);
 
   const navigate = useNavigate();
@@ -375,18 +376,12 @@ export default function Passenger() {
             <h1 className="border-b-2 border-white">
               <span>
                 {" "}
-                بلیط هواپیما {availFlights?.flights[0].fromFa} به{" "}
-                {availFlights?.flights[0].toFa}{" "}
+                بلیط هواپیما {availFlights?.data[0].from} به{" "}
+                {availFlights?.data[0].to}{" "}
               </span>
-              <span className="font-iranReg">
-                {availFlights?.flights[0].departureDateJalali.year}/
-                {availFlights?.flights[0].departureDateJalali.mon}/
-                {availFlights?.flights[0].departureDateJalali.mday}
-              </span>
-              <span>
-                {" "}
-                ({availFlights?.flights[0].departureDateJalali.weekday}){" "}
-              </span>
+              {/* <span className="font-iranReg">
+                {availFlights?.data[0].date_flight}
+              </span> */}
             </h1>
           </div>
 
@@ -446,7 +441,7 @@ export default function Passenger() {
 
           {/* charter118 flight card */}
           <div className="flex flex-col gap-5">
-            {availFlights?.flights?.map((flight) => (
+            {availFlights?.data?.map((flight) => (
               <PreFlightCard
                 showReserve={showReserve}
                 setShowReserve={setShowReserve}

@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "6e68625b-ac44-48aa-be66-bc9d7ad46f68",
+		"name": "charter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8416612",
+		"_collection_link": "https://lunar-firefly-139811.postman.co/workspace/charter118~09c6f3a9-6c9f-4146-9b67-6b09cd1d4c8a/collection/8416612-6e68625b-ac44-48aa-be66-bc9d7ad46f68?action=share&source=collection_link&creator=8416612"
+	},
+	"item": [
+		{
+			"name": "Airport-list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "charter.test/api/Flight/Airport-list",
+					"host": [
+						"charter",
+						"test"
+					],
+					"path": [
+						"api",
+						"Flight",
+						"Airport-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Airline=list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "charter.test/api/Flight/Airline-list",
+					"host": [
+						"charter",
+						"test"
+					],
+					"path": [
+						"api",
+						"Flight",
+						"Airline-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCharge",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "charter.test/api/Flight/GetCharge",
+					"host": [
+						"charter",
+						"test"
+					],
+					"path": [
+						"api",
+						"Flight",
+						"GetCharge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Available15Days",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from_flight\":\"THR\",\r\n    \"to_flight\":\"MHD\"\r\n}"
+				},
+				"url": {
+					"raw": "charter.test/api/Flight/Available15Days",
+					"host": [
+						"charter",
+						"test"
+					],
+					"path": [
+						"api",
+						"Flight",
+						"Available15Days"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Available",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"from_flight\": \"MHD\",\r\n  \"to_flight\": \"THR\",\r\n  \"date_flight\": \"2023-11-30\"\r\n}"
+				},
+				"url": {
+					"raw": "charter.test/api/Flight/Available",
+					"host": [
+						"charter",
+						"test"
+					],
+					"path": [
+						"api",
+						"Flight",
+						"Available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuyTicket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_request\": 123,\r\n    \"id_faktor\": 123\r\n}"
+				},
+				"url": {
+					"raw": "charter.test/api/Flight/BuyTicket",
+					"host": [
+						"charter",
+						"test"
+					],
+					"path": [
+						"api",
+						"Flight",
+						"BuyTicket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCaptcha",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from_flight\": \"THR\",\r\n    \"to_flight\": \"MHD\",\r\n    \"date_flight\": \"2023-11-23\",\r\n    \"time_flight\": \"17:45:00\",\r\n    \"number_flight\": \"IV40\",\r\n    \"ajency_online_ID\": 446,\r\n    \"cabinclass\": \"J\",\r\n    \"sellingType\": \"v\",\r\n    \"airline\": \"Caspian\"\r\n}"
+				},
+				"url": {
+					"raw": "charter.test/api/Flight/GetCaptcha",
+					"host": [
+						"charter",
+						"test"
+					],
+					"path": [
+						"api",
+						"Flight",
+						"GetCaptcha"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reservation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"from_flight\": \"MHD\",\r\n  \"to_flight\": \"KIH\",\r\n  \"date_flight\": \"2023-11-03\",\r\n  \"time_flight\": \"18:00:00\",\r\n  \"number_flight\": \"Y91234\",\r\n  \"ajency_online_ID\": 446,\r\n  \"cabinclass\": \"v\",    \r\n  \"sellingType\": \"v\",\r\n  \"airline\": \"KishAir\",\r\n  \"mobile\": \"0912345678\",\r\n  \"email\": \"test@test.com\",\r\n  \"passengers\": [\r\n    {\r\n      \"passengerType\": \"ADL\",\r\n      \"fnamefa\": \"تست\",\r\n      \"lnamefa\": \"تست\",\r\n      \"fnameen\": \"Test\",\r\n      \"lnameen\": \"Test\",\r\n      \"gender\": 1,\r\n      \"nationality\": 1,\r\n      \"passengerCode\": \"1234567890\",\r\n      \"nationalitycode\": \"IRI\",\r\n      \"expdate\": \"2020-02-02\",\r\n      \"birthday\": \"2020-02-02\"\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "charter.test/api/Flight/Reservation",
+					"host": [
+						"charter",
+						"test"
+					],
+					"path": [
+						"api",
+						"Flight",
+						"Reservation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
