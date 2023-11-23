@@ -29,30 +29,30 @@ export default function Purchase() {
 
 
   // changeable dates
-  // const todayFa = {
-  //   day: getDateFormat(new Date(selectedFlight?.date_flight), {
-  //     day: "2-digit",
-  //   }),
-  //   month: getDateFormat(new Date(selectedFlight?.date_flight), {
-  //     month: "numeric",
-  //   }),
-  //   monthTitle: getDateFormat(new Date(selectedFlight?.date_flight), {
-  //     month: "long",
-  //   }),
-  //   year: getDateFormat(new Date(selectedFlight?.date_flight), {
-  //     year: "numeric",
-  //   }),
-  //   dayWeek: getDateFormat(new Date(selectedFlight?.date_flight), {
-  //     weekday: "long",
-  //   }),
-  // };
+  const todayFa = {
+    day: getDateFormat(new Date(selectedFlight?.date_flight), {
+      day: "2-digit",
+    }),
+    month: getDateFormat(new Date(selectedFlight?.date_flight), {
+      month: "numeric",
+    }),
+    monthTitle: getDateFormat(new Date(selectedFlight?.date_flight), {
+      month: "long",
+    }),
+    year: getDateFormat(new Date(selectedFlight?.date_flight), {
+      year: "numeric",
+    }),
+    dayWeek: getDateFormat(new Date(selectedFlight?.date_flight), {
+      weekday: "long",
+    }),
+  };
 
 
   return (
     <>
       {loading && <Loader />}
       <div className="popup grid min-h-[100vh] grid-cols-12 gap-5 p-7">
-        {/* <RightSideReserve todayFa={todayFa} selectedFlight={selectedFlight} /> */}
+        <RightSideReserve todayFa={todayFa} selectedFlight={selectedFlight} />
         <LeftSideReserve selectedFlight={selectedFlight} />
       </div>
     </>

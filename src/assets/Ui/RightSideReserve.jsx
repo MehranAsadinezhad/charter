@@ -50,7 +50,7 @@ export function RightSideReserve({selectedFlight,todayFa}) {
                         <p>شماره پرواز</p>
                         <p>ایرلاین</p>
                     </div>
-                    {/* <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                         <p>{todayFa?.year}/{todayFa?.month}/{todayFa?.day}</p>
                         <p>{todayFa?.dayWeek}</p>
                         <p className="font-iranReg">{selectedFlight?.time_flight}</p>
@@ -58,7 +58,7 @@ export function RightSideReserve({selectedFlight,todayFa}) {
                         <p>{selectedFlight?.to}</p>
                         <p>{selectedFlight?.number_flight}</p>
                         <img className="w-10" alt="logo" src={selectedFlight?.airlineLogo}></img>
-                    </div> */}
+                    </div>
                 </li>
                 <li className="flex items-center justify-between gap-2 border-b-2 border-white py-2">
                     <div className="flex items-center gap-2">

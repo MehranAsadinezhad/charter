@@ -7,7 +7,7 @@ import { FaXmark } from "react-icons/fa6";
 export default function PassengerForm({
   selectedFlight,
   index,
-  onHandleRemoveForm,
+  // onHandleRemoveForm,
   // onHandleChange,
 }) {
   return (
@@ -45,7 +45,7 @@ export default function PassengerForm({
       <p className="mx-8 font-iranReg text-white">
         {separate(selectedFlight?.adultPrice)}
       </p>
-      <button onClick={onHandleRemoveForm(index)}>
+      <button>
         <FaXmark className="rounded-md p-1 text-xl font-bold text-white ring-2 ring-white" />
       </button>
     </form>
